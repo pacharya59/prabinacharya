@@ -1,0 +1,442 @@
+# prabinacharya
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #8b5cf6; /* Purple */
+    --secondary-color: #6366f1; /* Indigo */
+    --accent-color: #a78bfa; /* Lighter Purple for accents */
+    --text-light: #e6edf3;
+    --text-dark: #1f2937; 
+    --bg-dark: #0d1117; 
+    --bg-header: #111827; /* Solid, slightly darker than body for subtle separation */
+    --bg-header-transparent: rgba(17, 24, 39, 0.85); /* For scroll/blur effect if added later */
+    --bg-glass: rgba(31, 41, 55, 0.4); /* Slightly more opaque glass */
+    --border-glass: rgba(75, 85, 99, 0.4); 
+    --link-hover-bg: rgba(139, 92, 246, 0.15); 
+    --link-active-bg: var(--primary-color);
+    --header-height: 72px; /* Define header height for body padding */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    margin: 0;
+    padding-top: var(--header-height); /* Use variable for body padding */
+}
+
+#three-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* --- New Menu Styles V3 --- */
+header#top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--bg-header);
+    /* backdrop-filter: blur(8px); // Optional: if you want blur with transparency
+    -webkit-backdrop-filter: blur(8px); */
+    border-bottom: 1px solid rgba(55, 65, 81, 0.7); /* Darker border */
+    height: var(--header-height);
+    display: flex; /* Use flex to align items vertically */
+    align-items: center; /* Vertically center nav content */
+}
+
+header#top-header nav {
+    width: 100%;
+    max-width: 1280px; 
+    margin: 0 auto;
+    padding: 0 1rem; /* Horizontal padding for nav content */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header#top-header .nav-brand {
+    font-size: 1.65rem; /* Slightly adjusted */
+    font-weight: 700;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+    text-decoration: none;
+    letter-spacing: -0.5px; /* Subtle letter spacing */
+}
+header#top-header .nav-brand:hover {
+    color: var(--accent-color);
+}
+
+header#top-header .nav-links-desktop ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+header#top-header .nav-links-desktop .nav-item {
+    margin-left: 0.5rem; /* Reduced margin for tighter link group */
+}
+
+header#top-header .nav-links-desktop .nav-link {
+    color: #cbd5e1; /* Slightly muted link color */
+    text-decoration: none;
+    font-size: 0.95rem; /* Slightly smaller for a cleaner look */
+    font-weight: 500;
+    padding: 0.6rem 1rem; /* Adjusted padding for pill shape */
+    border-radius: 8px; /* Rounded corners for links */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+header#top-header .nav-links-desktop .nav-link:hover {
+    background-color: var(--link-hover-bg);
+    color: var(--text-light); /* Brighter on hover */
+}
+
+header#top-header .nav-links-desktop .nav-link.active {
+    background-color: var(--link-active-bg);
+    color: white !important; /* Ensure high contrast */
+    font-weight: 600;
+}
+
+/* Mobile Menu Styles */
+.navbar-toggler { 
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    padding: 0.5rem;
+    cursor: pointer;
+    display: flex; /* Ensure icon is centered if padding is uneven */
+    align-items: center;
+    justify-content: center;
+}
+.navbar-toggler i {
+    font-size: 1.6rem; 
+}
+
+#top_menu_collapse_mobile {
+    background-color: var(--bg-header); 
+    border-radius: 0 0 10px 10px; 
+    padding: 1rem; 
+    width: 100%;
+    position: absolute; 
+    top: var(--header-height); /* Position below header */
+    left: 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-top: 1px solid rgba(55, 65, 81, 0.7);
+}
+#top_menu_collapse_mobile .nav-item {
+    /* No margin needed if links are full width */
+}
+#top_menu_collapse_mobile .nav-link {
+    display: block; 
+    padding: 0.85rem 1rem; /* Generous tap targets */
+    border-radius: 6px;
+    color: #cbd5e1;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    margin-bottom: 0.25rem; /* Small space between mobile links */
+}
+#top_menu_collapse_mobile .nav-link:last-child {
+    margin-bottom: 0;
+}
+#top_menu_collapse_mobile .nav-link:hover {
+    background-color: var(--link-hover-bg);
+    color: var(--text-light);
+}
+#top_menu_collapse_mobile .nav-link.active {
+    background-color: var(--link-active-bg);
+    color: white !important;
+    font-weight: 600;
+}
+/* --- End New Menu Styles V3 --- */
+
+
+.glass-card {
+    background: var(--bg-glass);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-glass);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.5);
+}
+
+.glow-button {
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.5), 0 0 40px rgba(139, 92, 246, 0.3);
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    border-radius: 9999px; 
+    padding: 0.75rem 1.5rem; 
+    font-weight: 600;
+}
+
+.glow-button:hover {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.7), 0 0 60px rgba(99, 102, 241, 0.5);
+    transform: scale(1.05);
+}
+
+.section {
+    min-height: calc(80vh - var(--header-height)); 
+    padding: 40px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.section-title {
+    font-size: 2.5rem; 
+    font-weight: 700;
+    margin-bottom: 1.5rem; 
+    color: var(--primary-color);
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 3rem; 
+    }
+}
+
+
+.section-subtitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    color: var(--text-light);
+    opacity: 0.8;
+    text-align: center;
+    max-width: 600px;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+
+.form-input, .ai-input {
+    background-color: rgba(55, 65, 81, 0.5); 
+    border: 1px solid var(--border-glass);
+    color: var(--text-light);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+}
+.form-input:focus, .ai-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
+}
+.form-label {
+    color: var(--text-light);
+    opacity: 0.9;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+footer {
+    background-color: rgba(17, 24, 39, 0.9); 
+    border-top: 1px solid var(--border-glass);
+    position: relative;
+    z-index: 10;
+    padding: 2rem 1rem;
+}
+.footer-link:hover {
+    color: var(--primary-color);
+}
+
+
+#home-section {
+        min-height: calc(100vh - var(--header-height));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        background-image: url('../images/profile.png'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+}
+    
+
+
+#home-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* semi-transparent black overlay */
+    z-index: 1;
+}
+#home-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+#home-section .content-wrapper { 
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+}
+
+
+#home-section h1 {
+    font-size: 3rem; 
+    font-weight: 700;
+    color: white; 
+    text-shadow: 0 2px 15px rgba(0,0,0,0.7); 
+    margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+    #home-section h1 {
+        font-size: 4.5rem; 
+    }
+}
+
+#home-section .subtitle {
+    font-size: 1.25rem; 
+    font-weight: 400;
+    color: var(--text-light);
+    opacity: 0.9;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 768px) {
+    #home-section .subtitle {
+        font-size: 1.5rem; 
+    }
+}
+
+#home-section .cta-buttons .glow-button {
+    margin: 0.5rem;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid var(--primary-color);
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    margin: 1rem auto;
+    display: none;
+}
+.spinner.show {
+    display: block;
+}
+
+.ai-output {
+    margin-top: 1.5rem; 
+    padding: 1.25rem; 
+    background-color: rgba(55, 65, 81, 0.2); 
+    border-radius: 12px; 
+    border: 1px solid var(--border-glass);
+    white-space: pre-wrap;
+    text-align: left;
+    display: none;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+.ai-output.show {
+    display: block;
+}
+
+
+#about-me-image {
+    border-radius: 50%;
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+@media (min-width: 768px) {
+    #about-me-image {
+        width: 15rem;
+        height: 15rem;
+    }
+}
+#home-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* semi-transparent black overlay */
+    z-index: 1;
+  }
+  
+  #home-section .container {
+    position: relative;
+    z-index: 2;
+  }
+  #home-section {
+    background-image: url('../images/profile.jpg'); /* or adjust path as needed */
+}
+/* === Improved Bullet Point Alignment with Hover Glow === */
+.glass-card ul.list-disc {
+    list-style-position: inside;
+    padding-left: 1.25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.75rem;
+  }
+  
+  .glass-card li {
+    position: relative;
+    margin-left: 0.5rem;
+    padding-left: 0.75rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-radius: 6px;
+  }
+  
+  /* Hover glow effect for bullet items */
+  .glass-card li:hover {
+    background-color: rgba(139, 92, 246, 0.1);
+    color: #e0e0ff;
+    cursor: default;
+  }
+  
