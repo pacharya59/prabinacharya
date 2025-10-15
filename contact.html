@@ -1,152 +1,42 @@
-<!DOCTYPE html>
-<html lang="en-US">
-    <header id="top-header">
-        <nav>
-            <a href="index.html" class="nav-brand">
-                ✦  Sagar
-            </a>
-            
-            <div class="hidden lg:flex nav-links-desktop">
-                <ul>
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About Me</a></li>
-                    <li class="nav-item"><a href="experience.html" class="nav-link">Work Experience</a></li>
-                    <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
-                    <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li class="nav-item"><a href="blogs.html" class="nav-link">Blogs</a></li>
-                    <li class="nav-item"><a href="appointments.html" class="nav-link">Appointments</a></li>
-                </ul>
-            </div>
-    
-       <!-- Right-side Navbar Icons -->
-<div class="flex items-center space-x-4 ml-auto">
-
-      <!-- Call -->
-      <a href="tel:+16478709842" aria-label="Call">
-        <i class="fas fa-phone-alt fa-flip-horizontal text-white hover:text-purple-400 text-xl"></i>
-      </a>
-    <!-- Email -->
-    <a href="mailto:sharmasagar5438@gmail.com" aria-label="Email">
-      <i class="fas fa-envelope text-white hover:text-purple-400 text-xl"></i>
-    </a>
-  
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/sagar1350/" target="_blank" aria-label="LinkedIn">
-      <i class="fab fa-linkedin text-white hover:text-purple-400 text-xl"></i>
-    </a>
+<form action="https://formspree.io/f/mabcdxyz" method="POST" id="contact-form">
+  <div class="mb-4">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" id="name" name="name" class="form-input" required>
   </div>
-  
-  
-  
-  
-        </nav>
-        <div id="top_menu_collapse_mobile" class="hidden lg:hidden">
-            <div class="container mx-auto px-4 py-2">
-                <ul class="flex flex-col">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About Me</a></li>
-                    <li class="nav-item"><a href="experience.html" class="nav-link">Work Experience</a></li>
-                    <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
-                    <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li class="nav-item"><a href="blogs.html" class="nav-link">Blogs</a></li>
-                    <li class="nav-item"><a href="appointments.html" class="nav-link">Appointments</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-    
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Sagar Sharma</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body class="antialiased">
-    <div id="three-container"></div>
+  <div class="mb-4">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" id="email" name="email" class="form-input" required>
+  </div>
+  <div class="mb-4">
+    <label for="subject" class="form-label">Subject</label>
+    <input type="text" id="subject" name="_subject" class="form-input">
+  </div>
+  <div class="mb-6">
+    <label for="message" class="form-label">Message</label>
+    <textarea id="message" name="message" rows="4" class="form-input" required></textarea>
+  </div>
+  <button type="submit" class="glow-button w-full py-3 px-6 rounded-full text-lg">
+    Send Message <i class="fas fa-paper-plane ml-2"></i>
+  </button>
+</form>
 
-    <div id="wrapwrap" class="min-h-screen flex flex-col">
-       
+<!-- ✅ JavaScript for success/error messages -->
+<script>
+  const form = document.getElementById("contact-form");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { Accept: "application/json" }
+    });
+    if (response.ok) {
+      alert("✅ Message sent successfully!");
+      form.reset();
+    } else {
+      alert("❌ There was an error sending your message. Please try again later.");
+    }
+  });
+</script>
 
-        <main class="flex-grow">
-            <section id="contact-section" class="section">
-                <div class="container mx-auto px-4">
-                    <h2 class="section-title">Get In Touch <i class="fas fa-paper-plane ml-2"></i></h2>
-                    <div class="glass-card p-6 md:p-10 max-w-3xl mx-auto text-gray-200">
-                        <p class="text-center text-lg mb-8">Have a project, a question, or just want to connect? I’m always open to meaningful conversations and new opportunities. P.S. I respond faster than a DNS cache refresh.</p>
-                        <div class="flex flex-col md:flex-row gap-8">
-                            <div class="md:w-1/2">
-                                <h3 class="text-2xl font-semibold text-purple-300 mb-4">Contact Details</h3>
-                                <ul class="space-y-3 text-lg text-gray-300">
-                                    <li><i class="fas fa-map-marker-alt fa-fw mr-3 text-purple-400"></i>Toronto, ON, Canada</li>
-                                    <li><i class="fas fa-phone fa-fw mr-3 text-purple-400"></i><a href="tel:+16478709842" class="hover:text-purple-300 transition">+1 647-870-9842</a></li>
-                                    <li><i class="fas fa-envelope fa-fw mr-3 text-purple-400"></i><a href="mailto:sharmasagar5438@gmail.com" class="hover:text-purple-300 transition">sharmasagar5438@gmail.com</a></li>
-                                    <li><i class="fab fa-linkedin fa-fw mr-3 text-purple-400"></i><a href="https://www.linkedin.com/in/sagar1350/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-300 transition">linkedin.com/in/sagar1350</a></li>
-                                </ul>
-                            </div>
-                            <div class="md:w-1/2">
-                                <h3 class="text-2xl font-semibold text-purple-300 mb-4">Send a Message</h3>
-                                <form action="#" method="POST">
-                                    <div class="mb-4">
-                                        <label for="name" class="form-label">Name</label>
-                                        <input type="text" id="name" name="name" class="form-input" required>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input type="email" id="email" name="email" class="form-input" required>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="subject" class="form-label">Subject</label>
-                                        <input type="text" id="subject" name="subject" class="form-input">
-                                    </div>
-                                    <div class="mb-6">
-                                        <label for="message" class="form-label">Message</label>
-                                        <textarea id="message" name="message" rows="4" class="form-input" required></textarea>
-                                    </div>
-                                    <button type="submit" class="glow-button w-full py-3 px-6 rounded-full text-lg">
-                                        Send Message <i class="fas fa-paper-plane ml-2"></i>
-                                    </button>
-                            
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer id="bottom" class="text-gray-300">
-            <div class="container mx-auto text-center">
-                <div class="flex flex-col md:flex-row justify-between items-center mb-6">
-                    <div class="mb-6 md:mb-0 text-center md:text-left">
-                        <h4 class="text-xl font-bold text-white mb-2">Sagar Sharma</h4>
-                        <a class="text-gray-300 hover:text-purple-400 transition duration-300 flex items-center justify-center md:justify-start" href="mailto:sharmasagar5438@gmail.com">
-                            <i class="fas fa-envelope mr-2"></i> sharmasagar5438@gmail.com
-                        </a>
-                    </div>
-                    <ul class="list-none flex flex-wrap justify-center md:justify-end space-x-4 text-md">
-                        <li><a href="index.html" class="footer-link transition duration-300">🟣 Home</a></li>
-                        <li><a href="about.html" class="footer-link transition duration-300">🟣 About</a></li>
-                        <li><a href="privacy.html" class="footer-link transition duration-300">🟣 Privacy Policy</a></li>
-                        <li><a href="https://www.linkedin.com/in/sagar1350/" target="_blank" rel="noopener noreferrer" class="footer-link transition duration-300">🟣 LinkedIn</a></li>
-                    </ul>
-                    </ul>
-                </div>
-                <div class="border-t border-gray-700 pt-6 text-gray-400 text-sm">
-                    <span>Copyright © <span id="currentYear"></span> Sagar Sharma. All rights reserved.</span>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="js/main.js"></script>
-
-    
-</body>
-</html>
- 
