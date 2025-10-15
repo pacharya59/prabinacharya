@@ -1,58 +1,97 @@
 // Mobile nav toggle
 const hamburger = document.getElementById('hamburger');
 const mainNav = document.getElementById('mainNav');
-hamburger.addEventListener('click', () => {
-  mainNav.classList.toggle('open');
-});
+hamburger.addEventListener('click', () => mainNav.classList.toggle('open'));
 
 // Scroll reveal
 const faders = document.querySelectorAll('.fade');
 const options = { threshold: 0.12 };
 const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if(e.isIntersecting) e.target.classList.add('visible');
-  });
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
 }, options);
 faders.forEach(f => io.observe(f));
 
-// Rain canvas
-const canvas = document.getElementById('rain-canvas');
+// Canvas Data Drops with Network Lines
+const canvas = document.getElementById('dataCanvas');
 const ctx = canvas.getContext('2d');
-let width = canvas.width = window.innerWidth;
-let height = canvas.height = window.innerHeight;
+let w = canvas.width = window.innerWidth;
+let h = canvas.height = window.innerHeight;
 
+// Cloud position
+const cloud = { x: w/2, y: 80, radius: 60 };
+
+// Drops
 const drops = [];
-const dropCount = 100;
-
+const dropCount = 120;
 for(let i=0;i<dropCount;i++){
   drops.push({
-    x: Math.random()*width,
-    y: Math.random()*height,
-    length: Math.random()*15+10,
-    velocity: Math.random()*2+2,
-    opacity: Math.random()*0.4+0.3
+    x: cloud.x + (Math.random()-0.5)*cloud.radius*2,
+    y: cloud.y + 20 + Math.random()*10,
+    size: Math.random()*4+2,
+    speed: Math.random()*2+2,
+    alpha: Math.random()*0.5+0.3,
+    ripple: 0
   });
 }
 
+function drawCloud(){
+  ctx.beginPath();
+  ctx.arc(cloud.x, cloud.y, cloud.radius, Math.PI*0.5, Math.PI*1.5);
+  ctx.arc(cloud.x+40, cloud.y-20, cloud.radius*0.8, Math.PI*1, Math.PI*2);
+  ctx.arc(cloud.x+80, cloud.y, cloud.radius*0.6, Math.PI*1.5, Math.PI*0.5);
+  ctx.closePath();
+  ctx.fillStyle='rgba(255,255,255,0.15)';
+  ctx.fill();
+}
+
 function animate(){
-  ctx.clearRect(0,0,width,height);
-  ctx.fillStyle='rgba(255,255,255,0.7)';
+  ctx.clearRect(0,0,w,h);
+  drawCloud();
+
+  // Draw drops and ripples
   drops.forEach(d=>{
     ctx.beginPath();
-    ctx.moveTo(d.x,d.y);
-    ctx.lineTo(d.x,d.y+d.length);
-    ctx.strokeStyle=`rgba(255,255,255,${d.opacity})`;
-    ctx.lineWidth=1.5;
-    ctx.stroke();
-    d.y += d.velocity;
-    if(d.y > height) d.y = -d.length;
+    ctx.arc(d.x,d.y,d.size,0,Math.PI*2);
+    ctx.fillStyle=`rgba(0,200,255,${d.alpha})`;
+    ctx.fill();
+
+    if(d.ripple>0){
+      ctx.beginPath();
+      ctx.arc(d.x,h-5,d.ripple,0,Math.PI*2);
+      ctx.strokeStyle=`rgba(0,200,255,${0.3*(1-d.ripple/15)})`;
+      ctx.stroke();
+      d.ripple += 0.5;
+      if(d.ripple>15){ d.ripple=0; d.y = cloud.y+20; d.x = cloud.x + (Math.random()-0.5)*cloud.radius*2; }
+    }
+
+    d.y += d.speed;
+    if(d.y>h-5){ d.ripple=1; d.y=h-5; }
   });
+
+  // Draw network lines between close drops
+  const maxDist = 80;
+  for(let i=0;i<drops.length;i++){
+    for(let j=i+1;j<drops.length;j++){
+      const dx = drops[i].x - drops[j].x;
+      const dy = drops[i].y - drops[j].y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if(dist < maxDist){
+        ctx.beginPath();
+        ctx.moveTo(drops[i].x,drops[i].y);
+        ctx.lineTo(drops[j].x,drops[j].y);
+        ctx.strokeStyle=`rgba(0,200,255,${0.15*(1-dist/maxDist)})`;
+        ctx.lineWidth=1;
+        ctx.stroke();
+      }
+    }
+  }
+
   requestAnimationFrame(animate);
 }
 
 animate();
 
 window.addEventListener('resize', ()=>{
-  width=canvas.width=window.innerWidth;
-  height=canvas.height=window.innerHeight;
+  w=canvas.width=window.innerWidth;
+  h=canvas.height=window.innerHeight;
 });
