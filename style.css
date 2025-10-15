@@ -70,7 +70,7 @@ h2{color:var(--accent);margin-bottom:12px;}
 
 /* Mobile nav */
 .hamburger{display:none;background:transparent;color:var(--muted);border:none;font-size:20px;cursor:pointer;}
-@media(max-width:900px){
+@media(max-width:900px){ 
   .main-nav{display:none;}
   .hamburger{display:inline-block;}
   .main-nav.open{display:block;position:fixed;top:66px;right:18px;background:rgba(0,6,10,0.72);border:1px solid rgba(255,255,255,0.04);padding:14px;border-radius:10px;z-index:60;}
