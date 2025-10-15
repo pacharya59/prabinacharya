@@ -1,178 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prabin Acharya — IT Support Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- Water ripple canvas (pure CSS layers) -->
-  <div class="water-base"></div>
-  <div class="water-ripples" aria-hidden="true">
-    <span class="drop d1"></span>
-    <span class="drop d2"></span>
-    <span class="drop d3"></span>
-    <span class="drop d4"></span>
-    <span class="drop d5"></span>
+
+<!-- Water Drop Background -->
+<canvas id="rain-canvas"></canvas>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">PRABIN ACHARYA</div>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn primary" href="Prabin_Acharya_Resume.pdf" download>📄 Resume</a>
+    <button id="hamburger" class="hamburger">☰</button>
   </div>
+</header>
 
-  <!-- Header / Nav -->
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="brand">PRABIN ACHARYA</div>
-
-      <nav id="mainNav" class="main-nav" aria-label="Primary">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    </div>
-  </header>
-
-  <!-- Hero / Home -->
-  <main>
-    <section id="home" class="hero">
-      <div class="container fade">
-        <div class="hero-card glass">
-          <h1>Hi, I'm <span class="name">Prabin Acharya</span></h1>
-          <p class="tag">IT Support Technician • Microsoft 365 • AV & Network Support</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="Prabin_Acharya_Resume.pdf" download>📄 Download Resume</a>
-            <a class="btn ghost" href="#projects">View Projects</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="section">
-      <div class="container fade">
-        <h2>About Me</h2>
-        <p class="lead">
-          Client-focused IT Support Specialist with 3 years of hands-on experience in end-user support, system administration,
-          and AV infrastructure. I simplify complex issues, restore reliable operations quickly, and document solutions for teams.
-        </p>
-      </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience" class="section alt">
-      <div class="container fade">
-        <h2>Experience</h2>
-
-        <article class="card">
-          <h3>IT Support Technician — Seneca Polytechnic</h3>
-          <p class="muted">Jan 2024 – Dec 2025 · North York, ON</p>
-          <ul>
-            <li>Tier 1 & 2 support for 30+ faculty weekly — SLA-driven incident resolution.</li>
-            <li>Maintained AV systems (Crestron/projectors) with high classroom availability.</li>
-            <li>Reimaged & deployed workstations; managed asset inventory and documentation.</li>
-            <li>Troubleshot Palo Alto VPN and LAN/WAN issues to maintain 99% uptime.</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>IT Service Desk Representative (Co-op) — Seneca Polytechnic</h3>
-          <p class="muted">Aug 2023 – Dec 2023 · North York, ON</p>
-          <ul>
-            <li>Managed AD & Azure AD accounts (MFA resets), improved onboarding/offboarding flow.</li>
-            <li>Resolved 250+ requests/month with 90% first-call resolution rate.</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>Technical Support Representative — World Link Communications</h3>
-          <p class="muted">Jan 2021 – Dec 2021 · Kathmandu, Nepal</p>
-          <ul>
-            <li>First-line ISP support — resolved 90% of connectivity issues on first contact.</li>
-            <li>Optimized router configuration instructions and reduced repeat calls by 15%.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education" class="section">
-      <div class="container fade">
-        <h2>Education</h2>
-        <div class="card inline">
-          <h3>Seneca Polytechnic — Computer Systems Technician</h3>
-          <p>Associate’s Degree · President’s Honor List · CGPA: 3.9/4.0</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="section alt">
-      <div class="container fade">
-        <h2>Projects</h2>
-
-        <div class="card">
-          <h3>Roundcube Email Server Setup</h3>
-          <p>Deployed Roundcube on AWS (Apache + PHP). Enforced HTTPS, tuned SMTP settings, and verified end-to-end delivery and security.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Resume -->
-    <section id="resume" class="section">
-      <div class="container fade">
-        <h2>Resume</h2>
-        <p>Download the detailed resume (PDF) for full experience, skills, and references.</p>
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="container fade">
+    <div class="hero-card glass">
+      <h1>Hi, I'm <span class="name">Prabin Acharya</span></h1>
+      <p class="tag">IT Support Technician • Microsoft 365 • AV & Network Support</p>
+      <div class="hero-actions">
         <a class="btn primary" href="Prabin_Acharya_Resume.pdf" download>📄 Download Resume</a>
+        <a class="btn ghost" href="#projects">View Projects</a>
       </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section alt">
-      <div class="container fade">
-        <h2>Contact</h2>
-        <p class="lead">
-          Toronto, ON • <a href="mailto:prabimacharya55@gmail.com">prabimacharya55@gmail.com</a> • 437-269-9844
-        </p>
-        <p><a class="link" href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener">LinkedIn</a></p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <small>© 2025 Prabin Acharya — Built with HTML & CSS</small>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <!-- tiny JS for mobile nav + simple reveal on scroll -->
-  <script>
-    // Mobile nav toggle
-    const hamburger = document.getElementById('hamburger');
-    const mainNav = document.getElementById('mainNav');
-    hamburger.addEventListener('click', () => {
-      const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
-      hamburger.setAttribute('aria-expanded', !expanded);
-      mainNav.classList.toggle('open');
-    });
+<!-- About -->
+<section id="about" class="section">
+  <div class="container fade">
+    <h2>About Me</h2>
+    <p class="lead">Client-focused IT Support Specialist with 3 years of hands-on experience in end-user support, system administration, and AV infrastructure. I simplify complex issues, restore reliable operations quickly, and document solutions for teams.</p>
+  </div>
+</section>
 
-    // Simple scroll reveal (adds 'visible' class when in viewport)
-    const faders = document.querySelectorAll('.fade');
-    const options = { threshold: 0.12 };
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); }
-      });
-    }, options);
-    faders.forEach(f => io.observe(f));
-  </script>
+<!-- Experience -->
+<section id="experience" class="section alt">
+  <div class="container fade">
+    <h2>Experience</h2>
+    <article class="card">
+      <h3>IT Support Technician — Seneca Polytechnic</h3>
+      <p class="muted">Jan 2024 – Dec 2025 · North York, ON</p>
+      <ul>
+        <li>Tier 1 & 2 support for 30+ faculty weekly — SLA-driven incident resolution.</li>
+        <li>Maintained AV systems (Crestron/projectors) with high classroom availability.</li>
+        <li>Reimaged & deployed workstations; managed asset inventory and documentation.</li>
+        <li>Troubleshot Palo Alto VPN and LAN/WAN issues to maintain 99% uptime.</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3>IT Service Desk Representative (Co-op) — Seneca Polytechnic</h3>
+      <p class="muted">Aug 2023 – Dec 2023 · North York, ON</p>
+      <ul>
+        <li>Managed AD & Azure AD accounts (MFA resets), improved onboarding/offboarding flow.</li>
+        <li>Resolved 250+ requests/month with 90% first-call resolution rate.</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3>Technical Support Representative — World Link Communications</h3>
+      <p class="muted">Jan 2021 – Dec 2021 · Kathmandu, Nepal</p>
+      <ul>
+        <li>First-line ISP support — resolved 90% of connectivity issues on first contact.</li>
+        <li>Optimized router configuration instructions and reduced repeat calls by 15%.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education" class="section">
+  <div class="container fade">
+    <h2>Education</h2>
+    <div class="card inline">
+      <h3>Seneca Polytechnic — Computer Systems Technician</h3>
+      <p>Associate’s Degree · President’s Honor List · CGPA: 3.9/4.0</p>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="section alt">
+  <div class="container fade">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>Roundcube Email Server Setup</h3>
+      <p>Deployed Roundcube on AWS (Apache + PHP). Enforced HTTPS, tuned SMTP settings, and verified end-to-end delivery and security.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Resume -->
+<section id="resume" class="section">
+  <div class="container fade">
+    <h2>Resume</h2>
+    <p>Download the detailed resume (PDF) for full experience, skills, and references.</p>
+    <a class="btn primary" href="Prabin_Acharya_Resume.pdf" download>📄 Download Resume</a>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section alt">
+  <div class="container fade">
+    <h2>Contact</h2>
+    <p class="lead">Toronto, ON • <a href="mailto:prabimacharya55@gmail.com">prabimacharya55@gmail.com</a> • 437-269-9844</p>
+    <p><a class="link" href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener">LinkedIn</a></p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <small>© 2025 Prabin Acharya — Built with HTML & CSS</small>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="script.js"></script>
 </body>
 </html>
