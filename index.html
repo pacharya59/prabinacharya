@@ -1,136 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prabin Acharya | IT Support Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prabin Acharya — IT Support Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <div class="background"></div>
-  <div class="ripple"></div>
+  <!-- Water ripple canvas (pure CSS layers) -->
+  <div class="water-base"></div>
+  <div class="water-ripples" aria-hidden="true">
+    <span class="drop d1"></span>
+    <span class="drop d2"></span>
+    <span class="drop d3"></span>
+    <span class="drop d4"></span>
+    <span class="drop d5"></span>
+  </div>
 
-  <!-- Header -->
-  <header>
-    <div class="logo">PRABIN ACHARYA</div>
-    <nav id="navMenu">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">PRABIN ACHARYA</div>
 
-    <!-- Hamburger -->
-    <div class="hamburger" id="hamburger">
-      ☰
+      <nav id="mainNav" class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
     </div>
   </header>
 
-  <!-- Home -->
-  <section id="home" class="home">
-    <h1>Hi, I'm Prabin Acharya</h1>
-    <p>IT Support Technician | Microsoft 365 & Cloud Support | AV Technician</p>
-  </section>
+  <!-- Hero / Home -->
+  <main>
+    <section id="home" class="hero">
+      <div class="container fade">
+        <div class="hero-card glass">
+          <h1>Hi, I'm <span class="name">Prabin Acharya</span></h1>
+          <p class="tag">IT Support Technician • Microsoft 365 • AV & Network Support</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="Prabin_Acharya_Resume.pdf" download>📄 Download Resume</a>
+            <a class="btn ghost" href="#projects">View Projects</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- About -->
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>
-      I’m a client-focused IT Support Specialist with 3 years of experience in end-user support, 
-      system administration, and infrastructure maintenance across educational and corporate environments. 
-      I enjoy breaking complex problems into simple, accessible solutions and ensuring smooth, reliable operations.
-    </p>
-  </section>
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container fade">
+        <h2>About Me</h2>
+        <p class="lead">
+          Client-focused IT Support Specialist with 3 years of hands-on experience in end-user support, system administration,
+          and AV infrastructure. I simplify complex issues, restore reliable operations quickly, and document solutions for teams.
+        </p>
+      </div>
+    </section>
 
-  <!-- Experience -->
-  <section id="experience" class="experience">
-    <h2>Experience</h2>
+    <!-- Experience -->
+    <section id="experience" class="section alt">
+      <div class="container fade">
+        <h2>Experience</h2>
 
-    <div class="job">
-      <h3>IT Support Technician – Seneca Polytechnic</h3>
-      <p><em>Jan 2024 – Dec 2025 | North York, ON</em></p>
-      <ul>
-        <li>Delivered Tier 1 & 2 support to 30+ faculty weekly, maintaining SLA compliance.</li>
-        <li>Managed AV systems (Crestron, projectors) ensuring 100% uptime.</li>
-        <li>Reimaged PCs, migrated workstations, and maintained asset records.</li>
-        <li>Troubleshot VPN (Palo Alto) and LAN/WAN issues for 99% uptime.</li>
-      </ul>
+        <article class="card">
+          <h3>IT Support Technician — Seneca Polytechnic</h3>
+          <p class="muted">Jan 2024 – Dec 2025 · North York, ON</p>
+          <ul>
+            <li>Tier 1 & 2 support for 30+ faculty weekly — SLA-driven incident resolution.</li>
+            <li>Maintained AV systems (Crestron/projectors) with high classroom availability.</li>
+            <li>Reimaged & deployed workstations; managed asset inventory and documentation.</li>
+            <li>Troubleshot Palo Alto VPN and LAN/WAN issues to maintain 99% uptime.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>IT Service Desk Representative (Co-op) — Seneca Polytechnic</h3>
+          <p class="muted">Aug 2023 – Dec 2023 · North York, ON</p>
+          <ul>
+            <li>Managed AD & Azure AD accounts (MFA resets), improved onboarding/offboarding flow.</li>
+            <li>Resolved 250+ requests/month with 90% first-call resolution rate.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Technical Support Representative — World Link Communications</h3>
+          <p class="muted">Jan 2021 – Dec 2021 · Kathmandu, Nepal</p>
+          <ul>
+            <li>First-line ISP support — resolved 90% of connectivity issues on first contact.</li>
+            <li>Optimized router configuration instructions and reduced repeat calls by 15%.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+      <div class="container fade">
+        <h2>Education</h2>
+        <div class="card inline">
+          <h3>Seneca Polytechnic — Computer Systems Technician</h3>
+          <p>Associate’s Degree · President’s Honor List · CGPA: 3.9/4.0</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section alt">
+      <div class="container fade">
+        <h2>Projects</h2>
+
+        <div class="card">
+          <h3>Roundcube Email Server Setup</h3>
+          <p>Deployed Roundcube on AWS (Apache + PHP). Enforced HTTPS, tuned SMTP settings, and verified end-to-end delivery and security.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="section">
+      <div class="container fade">
+        <h2>Resume</h2>
+        <p>Download the detailed resume (PDF) for full experience, skills, and references.</p>
+        <a class="btn primary" href="Prabin_Acharya_Resume.pdf" download>📄 Download Resume</a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section alt">
+      <div class="container fade">
+        <h2>Contact</h2>
+        <p class="lead">
+          Toronto, ON • <a href="mailto:prabimacharya55@gmail.com">prabimacharya55@gmail.com</a> • 437-269-9844
+        </p>
+        <p><a class="link" href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener">LinkedIn</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025 Prabin Acharya — Built with HTML & CSS</small>
     </div>
-
-    <div class="job">
-      <h3>IT Service Desk Representative – Seneca Polytechnic</h3>
-      <p><em>Aug 2023 – Dec 2023 | North York, ON</em></p>
-      <ul>
-        <li>Managed user accounts in AD & Azure AD including MFA reset.</li>
-        <li>Resolved 250+ requests monthly with 90% first-call resolution rate.</li>
-        <li>Handled incidents using Salesforce CRM & Five9 under ITIL workflow.</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <h3>Technical Support Representative – World Link Communications</h3>
-      <p><em>Jan 2021 – Dec 2021 | Kathmandu, Nepal</em></p>
-      <ul>
-        <li>Resolved 90% of router/connectivity issues during first contact.</li>
-        <li>Guided users through advanced router setup reducing repeat calls by 15%.</li>
-        <li>Maintained 95% customer satisfaction with clear technical guidance.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Education -->
-  <section id="education" class="education">
-    <h2>Education</h2>
-    <p><strong>Seneca Polytechnic</strong><br>
-      Associate’s Degree in Computer Systems Technician<br>
-      President’s Honor List (CGPA: 3.9/4.0)
-    </p>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <div class="project-item">
-      <h3>Roundcube Email Server Setup</h3>
-      <p>Configured and deployed a Roundcube webmail server on AWS with Apache & PHP, enforced HTTPS, 
-         and resolved SSL issues through log analysis for secure mail delivery.</p>
-    </div>
-  </section>
-
-  <!-- Resume -->
-  <section id="resume" class="resume">
-    <h2>Resume</h2>
-    <p>You can download my full resume here:</p>
-    <a href="Prabin_Acharya_Resume.pdf" class="btn" download>📄 Download Resume</a>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>📍 Toronto, ON<br>
-       📧 <a href="mailto:prabimacharya55@gmail.com">prabimacharya55@gmail.com</a><br>
-       📞 437-269-9844<br>
-       🔗 <a href="https://linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
-    </p>
-  </section>
-
-  <footer>
-    <p>© 2025 Prabin Acharya | All Rights Reserved</p>
   </footer>
 
+  <!-- tiny JS for mobile nav + simple reveal on scroll -->
   <script>
-    const hamburger = document.getElementById("hamburger");
-    const navMenu = document.getElementById("navMenu");
-
-    hamburger.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
-      hamburger.classList.toggle("open");
+    // Mobile nav toggle
+    const hamburger = document.getElementById('hamburger');
+    const mainNav = document.getElementById('mainNav');
+    hamburger.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+      hamburger.setAttribute('aria-expanded', !expanded);
+      mainNav.classList.toggle('open');
     });
+
+    // Simple scroll reveal (adds 'visible' class when in viewport)
+    const faders = document.querySelectorAll('.fade');
+    const options = { threshold: 0.12 };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); }
+      });
+    }, options);
+    faders.forEach(f => io.observe(f));
   </script>
 </body>
 </html>
