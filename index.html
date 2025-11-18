@@ -1,137 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prabin Acharya — IT Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aashis Panthi - IT Support Technician | CompTIA A+ Certified</title>
+    <meta name="description" content="CompTIA A+ Certified IT Support Technician with 2+ years experience. 150+ monthly tickets, 85% resolution rate, 3.9 GPA. Specialized in Active Directory, Azure, and enterprise troubleshooting.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-<!-- Cloud + Data Drop Canvas -->
-<canvas id="dataCanvas"></canvas>
-
-<!-- Header -->
-<header class="site-header">
-  <div class="header-inner">
-    <div class="brand">PRABIN ACHARYA</div>
-    <nav class="main-nav" id="mainNav">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <a class="btn primary" href="Prabin_Acharya_Resume.pdf" download>📄 Resume</a>
-    <button id="hamburger" class="hamburger">☰</button>
-  </div>
-</header>
-
-<!-- Hero Section -->
-<section id="home" class="hero">
-  <div class="container fade">
-    <div class="hero-card glass">
-      <h1>Hi, I'm <span class="name">Prabin Acharya</span></h1>
-      <p class="tag">IT Support Technician • Microsoft 365 • AV & Network Support</p>
-      <div class="hero-actions">
-        <a class="btn primary" href="Prabin_Acharya_Resume.pdf" download>📄 Download Resume</a>
-        <a class="btn ghost" href="#projects">View Projects</a>
-      </div>
+    <!-- Spaceship Cursor -->
+    <div id="spaceship-cursor">
+        <div class="spaceship-body"></div>
+        <div class="spaceship-wing-left"></div>
+        <div class="spaceship-wing-right"></div>
+        <div id="engine-glow"></div>
     </div>
-  </div>
-</section>
+    
+    <!-- Space Background -->
+    <div id="three-container"></div>
 
-<!-- About -->
-<section id="about" class="section">
-  <div class="container fade">
-    <h2>About Me</h2>
-    <p class="lead">Client-focused IT Support Specialist with 3 years of hands-on experience in end-user support, system administration, and AV infrastructure. I simplify complex issues, restore reliable operations quickly, and document solutions for teams.</p>
-  </div>
-</section>
+    <!-- Navigation -->
+    <header class="header-fixed">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo">Aashis<span>Panthi</span></a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="experience.html" class="nav-link">Experience</a></li>
+                    <li><a href="education.html" class="nav-link">Education</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="resume.html" class="nav-link">Resume</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="AashisPanthi-Resume-13.pdf" download class="btn-resume">
+                    <i class="fas fa-download"></i> Resume
+                </a>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-<!-- Experience -->
-<section id="experience" class="section alt">
-  <div class="container fade">
-    <h2>Experience</h2>
-    <article class="card">
-      <h3>IT Support Technician — Seneca Polytechnic</h3>
-      <p class="muted">Jan 2024 – Dec 2025 · North York, ON</p>
-      <ul>
-        <li>Tier 1 & 2 support for 30+ faculty weekly — SLA-driven incident resolution.</li>
-        <li>Maintained AV systems (Crestron/projectors) with high classroom availability.</li>
-        <li>Reimaged & deployed workstations; managed asset inventory and documentation.</li>
-        <li>Troubleshot Palo Alto VPN and LAN/WAN issues to maintain 99% uptime.</li>
-      </ul>
-    </article>
-    <article class="card">
-      <h3>IT Service Desk Representative (Co-op) — Seneca Polytechnic</h3>
-      <p class="muted">Aug 2023 – Dec 2023 · North York, ON</p>
-      <ul>
-        <li>Managed AD & Azure AD accounts (MFA resets), improved onboarding/offboarding flow.</li>
-        <li>Resolved 250+ requests/month with 90% first-call resolution rate.</li>
-      </ul>
-    </article>
-    <article class="card">
-      <h3>Technical Support Representative — World Link Communications</h3>
-      <p class="muted">Jan 2021 – Dec 2021 · Kathmandu, Nepal</p>
-      <ul>
-        <li>First-line ISP support — resolved 90% of connectivity issues on first contact.</li>
-        <li>Optimized router configuration instructions and reduced repeat calls by 15%.</li>
-      </ul>
-    </article>
-  </div>
-</section>
+    <!-- Hero Section with Photo -->
+    <section class="hero-with-photo">
+        <div class="container">
+            <div class="hero-photo-grid">
+                
+                <!-- Left: Content -->
+                <div class="hero-content-left fade-in">
+                    <a href="education.html#certifications" class="hero-badge animate-badge">
+                        <i class="fas fa-certificate"></i> CompTIA A+ Certified
+                    </a>
+                    
+                    <h1 class="hero-title-main slide-up">
+                        Hi, I'm <span class="gradient-text">Aashis Panthi</span>
+                    </h1>
+                    
+                    <p class="hero-role slide-up delay-1">IT Support Technician | System Administrator</p>
+                    
+                    <p class="hero-greeting slide-up delay-2">
+                        😊 <strong>Smile! Your IT problems are about to be solved.</strong>
+                    </p>
+                    
+                    <p class="hero-desc slide-up delay-3">
+                        CompTIA A+ Certified IT Support Technician with <strong>2+ years at Seneca Polytechnic</strong>. 
+                        Proven track record: <strong>1,800+ tickets resolved</strong>, <strong>85% first-day resolution</strong>, 
+                        <strong>99% uptime</strong> maintained. Specialized in Active Directory, Azure, Microsoft 365, and enterprise troubleshooting.
+                    </p>
 
-<!-- Education -->
-<section id="education" class="section">
-  <div class="container fade">
-    <h2>Education</h2>
-    <div class="card inline">
-      <h3>Seneca Polytechnic — Computer Systems Technician</h3>
-      <p>Associate’s Degree · President’s Honor List · CGPA: 3.9/4.0</p>
+                    <div class="hero-buttons slide-up delay-4">
+                        <a href="contact.html" class="btn btn-primary btn-large ripple-btn">
+                            <i class="fas fa-envelope"></i> Get in Touch
+                        </a>
+                        <a href="experience.html" class="btn btn-secondary btn-large ripple-btn">
+                            <i class="fas fa-briefcase"></i> View My Work
+                        </a>
+                    </div>
+
+                    <div class="social-links slide-up delay-5">
+                        <a href="https://www.linkedin.com/in/aashis-panthi-790bb4238/" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/aashispanthi" target="_blank" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:aashispanthiap@gmail.com" class="social-link" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Your Photo -->
+                <!-- Right: Your Photo -->
+<div class="hero-photo-right fade-in delay-1">
+    <div class="photo-container">
+        <img src="aashis-seneca-uniform.jpg" alt="Aashis Panthi - Seneca IT Support Technician" class="profile-main">
+        
+        <!-- Seneca Credential Badge -->
+        <div class="seneca-badge minimal-glow">
+            <i class="fas fa-university"></i>
+            <div>
+                <strong>Seneca Polytechnic</strong>
+                <span>IT Support • 2+ Years</span>
+            </div>
+        </div>
+
+        <!-- Floating Stats -->
+        <div class="floating-stat stat-1 minimal-glow">
+            <strong>1,800+</strong>
+            <span>Tickets</span>
+        </div>
+        <div class="floating-stat stat-2 minimal-glow">
+            <strong>85%</strong>
+            <span>Resolution</span>
+        </div>
     </div>
-  </div>
-</section>
-
-<!-- Projects -->
-<section id="projects" class="section alt">
-  <div class="container fade">
-    <h2>Projects</h2>
-    <div class="card">
-      <h3>Roundcube Email Server Setup</h3>
-      <p>Deployed Roundcube on AWS (Apache + PHP). Enforced HTTPS, tuned SMTP settings, and verified end-to-end delivery and security.</p>
+    
+    <!-- SMILE TAGLINE BELOW PHOTO -->
+    <div class="photo-tagline">
+        😊 <strong>Smile! Your IT problems are about to be solved.</strong>
     </div>
-  </div>
-</section>
+</div>
 
-<!-- Resume -->
-<section id="resume" class="section">
-  <div class="container fade">
-    <h2>Resume</h2>
-    <p>Download the detailed resume (PDF) for full experience, skills, and references.</p>
-    <a class="btn primary" href="Prabin_Acharya_Resume.pdf" download>📄 Download Resume</a>
-  </div>
-</section>
+            </div>
+        </div>
+    </section>
 
-<!-- Contact -->
-<section id="contact" class="section alt">
-  <div class="container fade">
-    <h2>Contact</h2>
-    <p class="lead">Toronto, ON • <a href="mailto:prabimacharya55@gmail.com">prabimacharya55@gmail.com</a> • 437-269-9844</p>
-    <p><a class="link" href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener">LinkedIn</a></p>
-  </div>
-</section>
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid-compact">
+                <div class="stat-card-compact glass-container minimal-glow fade-in-up">
+                    <div class="stat-icon-small">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h3 class="stat-number-compact">150+</h3>
+                    <p class="stat-label-compact">Monthly Tickets Resolved</p>
+                </div>
 
-<footer class="site-footer"> 
-  <div class="container">
-    <small>© 2025 Prabin Acharya — Built with HTML, CSS & JS</small>
-  </div>
-</footer>
+                <div class="stat-card-compact glass-container minimal-glow fade-in-up delay-1">
+                    <div class="stat-icon-small">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3 class="stat-number-compact">85%</h3>
+                    <p class="stat-label-compact">First-Day Resolution Rate</p>
+                </div>
 
-<script src="script.js"></script>
+                <div class="stat-card-compact glass-container minimal-glow fade-in-up delay-2">
+                    <div class="stat-icon-small">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3 class="stat-number-compact">200+</h3>
+                    <p class="stat-label-compact">Systems Deployed</p>
+                </div>
+
+                <div class="stat-card-compact glass-container minimal-glow fade-in-up delay-3">
+                    <div class="stat-icon-small">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="stat-number-compact">99%</h3>
+                    <p class="stat-label-compact">Network Uptime</p>
+                </div>
+            </div>
+
+            <!-- President's Honours Badge -->
+            <a href="education.html#honours" class="academic-badge-compact glass-container minimal-glow fade-in-up delay-4">
+                <i class="fas fa-trophy"></i>
+                <span>President's Honours List - 4 Consecutive Terms (3.9 GPA)</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- What I Bring Section -->
+    <section class="what-i-bring">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2 class="section-title-compact">What I Bring to Your Team</h2>
+                <p class="section-subtitle-compact">Core competencies that drive IT excellence</p>
+            </div>
+
+            <div class="competencies-grid-compact">
+                <div class="competency-card-compact glass-container minimal-glow fade-in-up">
+                    <div class="competency-header">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Enterprise IT Support</h3>
+                    </div>
+                    <ul class="competency-list-compact">
+                        <li><i class="fas fa-check-circle"></i> Ticketing system management (Salesforce, F9 VoIP)</li>
+                        <li><i class="fas fa-check-circle"></i> Level 1 troubleshooting & escalation</li>
+                        <li><i class="fas fa-check-circle"></i> AV system configuration & support</li>
+                        <li><i class="fas fa-check-circle"></i> 150+ monthly tickets, 85% same-day resolution</li>
+                    </ul>
+                </div>
+
+                <div class="competency-card-compact glass-container minimal-glow fade-in-up delay-1">
+                    <div class="competency-header">
+                        <i class="fas fa-server"></i>
+                        <h3>System Administration</h3>
+                    </div>
+                    <ul class="competency-list-compact">
+                        <li><i class="fas fa-check-circle"></i> Active Directory & Azure AD/Entra ID</li>
+                        <li><i class="fas fa-check-circle"></i> Microsoft 365 & Exchange Online</li>
+                        <li><i class="fas fa-check-circle"></i> Group Policy & SSPR workflows</li>
+                        <li><i class="fas fa-check-circle"></i> Windows Server 2019 administration</li>
+                    </ul>
+                </div>
+
+                <div class="competency-card-compact glass-container minimal-glow fade-in-up delay-2">
+                    <div class="competency-header">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>Networking & Infrastructure</h3>
+                    </div>
+                    <ul class="competency-list-compact">
+                        <li><i class="fas fa-check-circle"></i> TCP/IP, DNS, DHCP configuration</li>
+                        <li><i class="fas fa-check-circle"></i> VPN setup (GlobalProtect)</li>
+                        <li><i class="fas fa-check-circle"></i> Network printer mapping & troubleshooting</li>
+                        <li><i class="fas fa-check-circle"></i> LAN/WAN connectivity issues</li>
+                    </ul>
+                </div>
+
+                <div class="competency-card-compact glass-container minimal-glow fade-in-up delay-3">
+                    <div class="competency-header">
+                        <i class="fas fa-cloud"></i>
+                        <h3>Cloud & Deployment</h3>
+                    </div>
+                    <ul class="competency-list-compact">
+                        <li><i class="fas fa-check-circle"></i> Microsoft Azure multi-region deployment</li>
+                        <li><i class="fas fa-check-circle"></i> AWS EC2 mail server configuration</li>
+                        <li><i class="fas fa-check-circle"></i> PXE boot imaging (200+ workstations)</li>
+                        <li><i class="fas fa-check-circle"></i> Microsoft Intune MDM management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="featured-projects">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2 class="section-title-compact">Featured Projects</h2>
+                <p class="section-subtitle-compact">Real-world cloud, security & infrastructure implementations</p>
+            </div>
+
+            <div class="projects-grid-compact">
+                <div class="project-featured-compact glass-container minimal-glow fade-in-up">
+                    <div class="project-image-compact">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <div class="project-content-compact">
+                        <h3>Azure Multi-Region Web Deployment</h3>
+                        <p>Deployed redundant website architecture across two Azure regions with load balancing and global traffic management for high availability.</p>
+                        <div class="project-tech-compact">
+                            <span>Microsoft Azure</span>
+                            <span>Load Balancing</span>
+                            <span>Traffic Management</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-featured-compact glass-container minimal-glow fade-in-up delay-1">
+                    <div class="project-image-compact">
+                        <i class="fab fa-raspberry-pi"></i>
+                    </div>
+                    <div class="project-content-compact">
+                        <h3>Raspberry Pi Security System</h3>
+                        <p>Designed motion-detecting home security system with Python integration for automated image/video capture and remote VNC monitoring.</p>
+                        <div class="project-tech-compact">
+                            <span>Python</span>
+                            <span>Hardware Integration</span>
+                            <span>IoT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center fade-in-up delay-2">
+                <a href="projects.html" class="btn btn-secondary btn-large ripple-btn">
+                    <i class="fas fa-folder-open"></i> View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Preview -->
+    <section class="certifications-preview" id="certifications">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2 class="section-title-compact">Certifications & Credentials</h2>
+                <p class="section-subtitle-compact">Industry-recognized qualifications</p>
+            </div>
+
+            <div class="certs-grid-compact">
+                <a href="education.html#certifications" class="cert-item-compact fade-in-up">
+                    <i class="fas fa-certificate cert-icon-comptia"></i>
+                    <h4>CompTIA A+</h4>
+                    <p>April 2025</p>
+                </a>
+
+                <a href="education.html#certifications" class="cert-item-compact fade-in-up delay-1">
+                    <i class="fab fa-google cert-icon-google"></i>
+                    <h4>Google IT Support</h4>
+                    <p>Professional Certificate</p>
+                </a>
+
+                <a href="education.html#education-main" class="cert-item-compact fade-in-up delay-2">
+                    <i class="fas fa-graduation-cap cert-icon-seneca"></i>
+                    <h4>Honours Diploma</h4>
+                    <p>3.9 CGPA - Seneca Polytechnic</p>
+                </a>
+            </div>
+
+            <div class="text-center fade-in-up delay-3">
+                <a href="education.html#certifications" class="btn btn-secondary btn-large ripple-btn">
+                    <i class="fas fa-award"></i> View All Certifications
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box-large glass-container-xl minimal-glow fade-in-up">
+                <h2 class="cta-title">Ready to Strengthen Your IT Team?</h2>
+                <p class="cta-text">Let's discuss how my expertise in IT support, system administration, and cloud infrastructure can benefit your organization.</p>
+                <div class="cta-buttons-large">
+                    <a href="contact.html" class="btn btn-primary btn-xl ripple-btn">
+                        <i class="fas fa-paper-plane"></i> Get in Touch
+                    </a>
+                    <a href="AashisPanthi-Resume-13.pdf" download class="btn btn-secondary btn-xl ripple-btn">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+                <p class="cta-note"><em>Available for full-time IT Support and System Administrator roles in the Greater Toronto Area</em></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Aashis Panthi. Built with passion for technology.</p>
+            <p class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
 </body>
 </html>
