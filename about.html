@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Aashis Panthi - IT Support Technician</title>
+    <meta name="description" content="CompTIA A+ certified IT professional from Kathmandu to Toronto. 3.9 GPA, 1,800+ tickets resolved, 85% first-day resolution.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Spaceship Cursor -->
+    <div id="spaceship-cursor">
+        <div class="spaceship-body"></div>
+        <div class="spaceship-wing-left"></div>
+        <div class="spaceship-wing-right"></div>
+        <div id="engine-glow"></div>
+    </div>
+    
+    <!-- Space Background -->
+    <div id="three-container"></div>
+
+    <!-- Navigation -->
+    <header class="header-fixed">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo">Aashis<span>Panthi</span></a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li><a href="experience.html" class="nav-link">Experience</a></li>
+                    <li><a href="education.html" class="nav-link">Education</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="resume.html" class="nav-link">Resume</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="AashisPanthi-Resume-13.pdf" download class="btn-resume">
+                    <i class="fas fa-download"></i> Resume
+                </a>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Profile Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content glass-container minimal-glow fade-in">
+                <div class="profile-image-wrapper">
+                    <div class="profile-image-glow"></div>
+                    <img src="profile-picture.jpg" alt="Aashis Panthi" class="profile-image-large" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="profile-placeholder">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+                <div class="hero-text-content">
+                    <h1 class="about-hero-title slide-up">
+                        Meet <span class="gradient-text">Aashis Panthi</span> 👨‍💻
+                    </h1>
+                    <p class="about-hero-subtitle slide-up delay-1">
+                        CompTIA A+ Certified IT Support Technician | System Administrator | Cloud Enthusiast
+                    </p>
+                    <div class="hero-badges slide-up delay-2">
+                        <a href="education.html#certifications" class="badge-animated badge-link">
+                            <i class="fas fa-certificate"></i> CompTIA A+
+                        </a>
+                        <a href="education.html#education-main" class="badge-animated badge-link">
+                            <i class="fas fa-trophy"></i> 3.9 GPA
+                        </a>
+                        <a href="experience.html" class="badge-animated badge-link">
+                            <i class="fas fa-chart-line"></i> 85% Resolution
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Story Section (Enhanced) -->
+    <section class="about-story-section">
+        <div class="container">
+            <div class="glass-container-xl minimal-glow fade-in-up">
+                <h2 class="section-title-about">
+                    <span class="gradient-text">My Story</span> 📖
+                </h2>
+                
+                <div class="story-content">
+                    <p class="story-paragraph">
+                        My path to IT support started in <strong class="location-highlight">Kathmandu</strong>, where I first discovered that solving technical problems wasn't just about knowing commands—it was about understanding people. During my internship at <a href="experience.html" class="inline-link">WorldLink Communications</a>, I realized something crucial: the best IT professionals aren't just technically skilled; they're translators who turn "server error 503" into "here's how we'll get you back online."
+                    </p>
+
+                    <p class="story-paragraph">
+                        When I moved to <strong class="location-highlight">Toronto</strong> to pursue my <a href="education.html#education-main" class="inline-link">Honours Diploma in Computer Systems Technician at Seneca Polytechnic</a>, that philosophy became my foundation. I didn't just aim to pass courses—I aimed to master the <em>why</em> behind every troubleshooting step. The result? A <a href="education.html#education-main" class="inline-link highlight-achievement">3.9 CGPA</a> and recognition on the <a href="education.html#honours" class="inline-link highlight-achievement">President's Honours List for four consecutive terms</a>.
+                    </p>
+
+                    <p class="story-paragraph">
+                        But real growth happened outside the classroom. As an <a href="experience.html" class="inline-link">IT Technical Support and Hy-flex Ambassador at Seneca</a>, I supported <strong>100+ users daily</strong> across <strong>10+ hybrid classrooms</strong>. I re-imaged <strong>200+ workstations</strong>. I resolved <strong>150+ monthly tickets</strong> with an <strong>85% first-day resolution rate</strong>. I reduced classroom downtime by <strong>30%</strong> not through technical wizardry, but through proactive problem-solving and clear communication.
+                    </p>
+
+                    <p class="story-paragraph story-conclusion">
+                        And through it all, I learned the most important lesson: IT support isn't about showing off technical knowledge—it's about making someone's day easier, their workflow smoother, and their frustration disappear.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What I Do Best -->
+    <section class="expertise-section">
+        <div class="container">
+            <h2 class="section-title-large fade-in-up">
+                <span class="gradient-text">What I Do Best</span> 🎯
+            </h2>
+
+            <div class="expertise-grid">
+                <div class="expertise-card-enhanced minimal-glow fade-in-up">
+                    <div class="expertise-icon-wrapper">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Systems Administration</h3>
+                    <p class="expertise-description">
+                        Active Directory, Azure AD/Entra ID, Microsoft 365, Exchange Online—I don't just manage these systems; I optimize them. Whether provisioning users, configuring group policies, or implementing access controls, I approach every task with a security-first mindset.
+                    </p>
+                    <div class="tech-list-animated">
+                        <span class="tech-pill">Active Directory</span>
+                        <span class="tech-pill">Azure AD</span>
+                        <span class="tech-pill">Microsoft 365</span>
+                        <span class="tech-pill">Group Policy</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card-enhanced minimal-glow fade-in-up delay-1">
+                    <div class="expertise-icon-wrapper">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Enterprise Troubleshooting</h3>
+                    <p class="expertise-description">
+                        From diagnosing AV equipment failures in hybrid classrooms to resolving VPN authentication errors, I've handled the full spectrum of Tier 1 support. My approach? Diagnose fast, communicate clearly, document thoroughly, escalate smartly.
+                    </p>
+                    <div class="tech-list-animated">
+                        <span class="tech-pill">150+ Tickets/Month</span>
+                        <span class="tech-pill">85% Resolution</span>
+                        <span class="tech-pill">VPN Config</span>
+                        <span class="tech-pill">AV Systems</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card-enhanced minimal-glow fade-in-up delay-2">
+                    <div class="expertise-icon-wrapper">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud & Infrastructure</h3>
+                    <p class="expertise-description">
+                        I've deployed <a href="projects.html" class="inline-link">fault-tolerant architectures on Azure</a> and configured <a href="projects.html" class="inline-link">production-ready mail servers on AWS</a>. But more importantly, I understand how cloud systems integrate with on-premises infrastructure—critical knowledge for hybrid IT environments.
+                    </p>
+                    <div class="tech-list-animated">
+                        <span class="tech-pill">Azure</span>
+                        <span class="tech-pill">AWS EC2</span>
+                        <span class="tech-pill">Hybrid Cloud</span>
+                        <span class="tech-pill">TCP/IP</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card-enhanced minimal-glow fade-in-up delay-3">
+                    <div class="expertise-icon-wrapper">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>User-Focused Support</h3>
+                    <p class="expertise-description">
+                        Technical skills matter, but so does empathy. I've guided non-technical faculty through Self-Service Password Reset workflows, mapped network printers for users who "just want it to work," and translated complex IT policies into simple, actionable steps.
+                    </p>
+                    <div class="tech-list-animated">
+                        <span class="tech-pill">User Training</span>
+                        <span class="tech-pill">SSPR Workflows</span>
+                        <span class="tech-pill">Clear Communication</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Sets Me Apart -->
+    <section class="differentiators-section">
+        <div class="container">
+            <h2 class="section-title-large fade-in-up">
+                <span class="gradient-text">What Sets Me Apart</span> ⭐
+            </h2>
+
+            <div class="diff-grid-large">
+                <div class="diff-card-animated minimal-glow fade-in-up">
+                    <div class="diff-number">01</div>
+                    <div class="diff-icon-large">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Security-First Mindset</h3>
+                    <p>I enforce access controls, implement endpoint protection, and treat every system as if it's holding critical data — because it is.</p>
+                </div>
+
+                <div class="diff-card-animated minimal-glow fade-in-up delay-1">
+                    <div class="diff-number">02</div>
+                    <div class="diff-icon-large">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Proactive Problem-Solving</h3>
+                    <p>The best ticket is the one that never gets opened. I maintain systems before failures occur — not after.</p>
+                </div>
+
+                <div class="diff-card-animated minimal-glow fade-in-up delay-2">
+                    <div class="diff-number">03</div>
+                    <div class="diff-icon-large">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>User Empathy + Technical Depth</h3>
+                    <p>I translate tech-speak into clear solutions. Technical expertise means nothing if users don't understand it.</p>
+                </div>
+
+                <div class="diff-card-animated minimal-glow fade-in-up delay-3">
+                    <div class="diff-number">04</div>
+                    <div class="diff-icon-large">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Continuous Learning</h3>
+                    <p>Currently pursuing: <strong>CompTIA Network+</strong>, <strong>Azure Administrator (AZ-104)</strong>, and advanced cloud security.</p>
+                </div>
+
+                <div class="diff-card-animated minimal-glow fade-in-up delay-4">
+                    <div class="diff-number">05</div>
+                    <div class="diff-icon-large">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Multilingual Communication</h3>
+                    <p>English, Nepali, Hindi — valuable for supporting Toronto's diverse workforce.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Timeline -->
+    <section class="journey-section">
+        <div class="container">
+            <h2 class="section-title-large fade-in-up">
+                <span class="gradient-text">Professional Highlights</span> 🚀
+            </h2>
+
+            <div class="timeline-interactive">
+                <div class="timeline-item-large minimal-glow fade-in-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content-card">
+                        <div class="timeline-icon-wrap">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Seneca Polytechnic</h3>
+                        <p class="timeline-role">IT Technical Support & Hy-flex Ambassador</p>
+                        <p class="timeline-period">2022-2024 | Toronto, Ontario</p>
+                        <ul class="timeline-highlights-compact">
+                            <li><i class="fas fa-check"></i> <strong>1,800+ tickets</strong> resolved with <strong>85% first-day resolution</strong></li>
+                            <li><i class="fas fa-check"></i> Maintained <strong>99% uptime</strong> across enterprise labs</li>
+                            <li><i class="fas fa-check"></i> Deployed <strong>200+ workstations</strong> via PXE boot</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item-large minimal-glow fade-in-up delay-1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content-card">
+                        <div class="timeline-icon-wrap">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>WorldLink Communications</h3>
+                        <p class="timeline-role">Help Desk Support Intern</p>
+                        <p class="timeline-period">2021-2022 | Kathmandu, Nepal</p>
+                        <ul class="timeline-highlights-compact">
+                            <li><i class="fas fa-check"></i> Troubleshot internet, VoIP, and router configuration</li>
+                            <li><i class="fas fa-check"></i> Created technical knowledge base</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-cta fade-in-up delay-2">
+                <a href="experience.html" class="btn btn-large btn-primary ripple-btn">
+                    <i class="fas fa-arrow-right"></i> View Full Experience
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials -->
+    <section class="credentials-section">
+        <div class="container">
+            <h2 class="section-title-large fade-in-up">
+                <span class="gradient-text">Credentials</span> 🎓
+            </h2>
+
+            <div class="credentials-showcase">
+                <a href="education.html#certifications" class="credential-card-large minimal-glow fade-in-up">
+                    <div class="credential-badge comptia">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>CompTIA A+</h3>
+                    <p>April 2025</p>
+                    <span class="view-detail">View Certificate →</span>
+                </a>
+
+                <a href="education.html#certifications" class="credential-card-large minimal-glow fade-in-up delay-1">
+                    <div class="credential-badge google">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3>Google IT Support</h3>
+                    <p>Professional Certificate</p>
+                    <span class="view-detail">View Certificate →</span>
+                </a>
+
+                <a href="education.html#education-main" class="credential-card-large minimal-glow fade-in-up delay-2">
+                    <div class="credential-badge seneca">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Honours Diploma</h3>
+                    <p>3.9 CGPA</p>
+                    <span class="view-detail">View Details →</span>
+                </a>
+
+                <a href="education.html#honours" class="credential-card-large minimal-glow fade-in-up delay-3">
+                    <div class="credential-badge honours">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>President's Honours</h3>
+                    <p>4 Consecutive Terms</p>
+                    <span class="view-detail">View Awards →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box-large glass-container-xl minimal-glow fade-in-up">
+                <h2 class="cta-title">Ready to Build Something Great Together?</h2>
+                <p class="cta-text">I'm seeking IT Support roles where I can deliver immediate impact. Let's connect!</p>
+                <div class="cta-buttons-large">
+                    <a href="contact.html" class="btn btn-primary btn-xl ripple-btn">
+                        <i class="fas fa-paper-plane"></i> Get in Touch
+                    </a>
+                    <a href="AashisPanthi-Resume-13.pdf" download class="btn btn-secondary btn-xl ripple-btn">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+                <p class="cta-note"><em>P.S. I respond faster than a DNS cache refresh</em> ⚡</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Aashis Panthi. Built with passion for technology.</p>
+            <p class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
