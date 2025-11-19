@@ -1025,7 +1025,8 @@ a, button, input, textarea, select, .glass-container, .btn, nav {
     width: 220px;
     height: 220px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;  /* Changed from 'cover' to 'contain' */
+    object-position: center;
     border: 5px solid var(--primary-color);
     box-shadow: 0 20px 60px rgba(0, 212, 255, 0.5);
     position: relative;
@@ -6139,3 +6140,4 @@ html {
         width: 100%;
     }
 }
+
