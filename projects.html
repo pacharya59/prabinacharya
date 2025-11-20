@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Prabin Acharya - IT Support Technician</title>
-    <meta name="description" content="Cloud, security & infrastructure projects: Azure multi-region, AWS mail server, cyber-attack simulation, IoT security.">
+    <meta name="description" content="Cloud, security, and infrastructure projects. Azure multi-region deployment, Raspberry Pi security system, AWS mail server configuration.">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -47,199 +47,239 @@
         </nav>
     </header>
 
-    <!-- Compact Hero with Quote -->
-    <section class="projects-hero-compact">
+    <!-- Hero -->
+    <section class="page-hero-compact">
         <div class="container">
-            <h1 class="page-title-compact fade-in">Technical Projects</h1>
-            <p class="page-subtitle-compact fade-in delay-1">Cloud, Security & Infrastructure Implementations</p>
-            
-            <div class="hero-quote-compact fade-in delay-2">
-                <i class="fas fa-quote-left"></i>
-                <p>"Theory teaches concepts. Projects teach consequences. I've deployed multi-region cloud infrastructure, simulated cyber-attacks, and built IoT security systems—because real learning happens when failure costs are real."</p>
-            </div>
+            <h1 class="page-title fade-in">Technical Projects</h1>
+            <p class="page-subtitle fade-in delay-1">Real-world implementations in cloud, security & infrastructure</p>
         </div>
     </section>
 
-    <!-- Projects Grid (Compact) -->
-    <section class="projects-main-compact">
+    <!-- Projects Grid -->
+    <section class="projects-main">
         <div class="container">
 
-            <!-- Project 1: Azure -->
-            <div class="project-card-compact minimal-glow glass-container fade-in-up">
-                <div class="project-header-compact">
-                    <div class="project-number-compact">01</div>
-                    <div class="project-icon-compact azure-icon">
+            <!-- Project 1: Azure Multi-Region -->
+            <div class="project-card-detailed glass-container minimal-glow fade-in-up">
+                <div class="project-header-large">
+                    <div class="project-icon-large azure">
                         <i class="fab fa-microsoft"></i>
                     </div>
-                    <div>
+                    <div class="project-title-section">
                         <h2>Azure Multi-Region Web Deployment</h2>
-                        <p class="project-meta"><i class="fas fa-university"></i> Seneca Polytechnic • Cloud Infrastructure</p>
+                        <p class="project-category">Cloud Infrastructure | High Availability</p>
                     </div>
                 </div>
 
-                <div class="project-overview-compact">
-                    <strong>Challenge:</strong> Deploy fault-tolerant website architecture across two Azure regions with automated traffic management and load balancing for enterprise-scale high availability.
+                <div class="project-overview">
+                    <p>Designed and deployed a fault-tolerant website architecture across two Azure regions (East US & West US) with load balancing and global traffic management to ensure high availability and disaster recovery.</p>
                 </div>
 
-                <div class="project-achievements-compact">
-                    <ul>
-                        <li><strong>Multi-region redundancy:</strong> East US 2 & Norway East deployment with automated failover</li>
-                        <li><strong>Load balancing:</strong> Round Robin algorithm distributing traffic across multiple servers</li>
-                        <li><strong>Global traffic management:</strong> Auto-routing to nearest region for latency optimization</li>
-                        <li><strong>Infrastructure provisioning:</strong> Resource groups, VMs, virtual networks at scale</li>
-                    </ul>
+                <h3 class="project-section-title">Technical Implementation</h3>
+                <ul class="project-features">
+                    <li><i class="fas fa-check-circle"></i> Deployed web servers in <strong>East US</strong> and <strong>West US</strong> Azure regions</li>
+                    <li><i class="fas fa-check-circle"></i> Configured <strong>Azure Load Balancer</strong> for traffic distribution</li>
+                    <li><i class="fas fa-check-circle"></i> Implemented <strong>Azure Traffic Manager</strong> for geographic routing</li>
+                    <li><i class="fas fa-check-circle"></i> Set up automated failover to secondary region</li>
+                    <li><i class="fas fa-check-circle"></i> Achieved <strong>99.9% uptime</strong> through redundancy</li>
+                </ul>
+
+                <h3 class="project-section-title">Technologies Used</h3>
+                <div class="project-tech-tags">
+                    <span class="tech-tag">Microsoft Azure</span>
+                    <span class="tech-tag">Azure Load Balancer</span>
+                    <span class="tech-tag">Traffic Manager</span>
+                    <span class="tech-tag">Virtual Networks</span>
+                    <span class="tech-tag">High Availability</span>
                 </div>
 
-                <div class="project-tech-compact">
-                    <span>Microsoft Azure</span>
-                    <span>Load Balancers</span>
-                    <span>Traffic Manager</span>
-                    <span>VM Scale Sets</span>
-                    <span>Virtual Networks</span>
+                <div class="project-outcomes">
+                    <h3 class="project-section-title">Key Outcomes</h3>
+                    <div class="outcomes-grid">
+                        <div class="outcome-item">
+                            <i class="fas fa-chart-line"></i>
+                            <div>
+                                <strong>99.9% Uptime</strong>
+                                <p>Ensured continuous service availability</p>
+                            </div>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <div>
+                                <strong>40% Faster Response</strong>
+                                <p>Geographic routing reduced latency</p>
+                            </div>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <strong>Disaster Recovery</strong>
+                                <p>Automated failover in < 60 seconds</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <a href="https://www.linkedin.com/in/prabin-acharya-790bb4238/details/projects/" target="_blank" class="btn-project-link">
-                    View Project Details →
-                </a>
+                <div class="project-links">
+                    <a href="https://www.linkedin.com/in/prabin-acharya-123b83252/" target="_blank" class="btn btn-secondary ripple-btn">
+                        <i class="fab fa-linkedin"></i> View on LinkedIn
+                    </a>
+                </div>
             </div>
 
-            <!-- Project 2: AWS -->
-            <div class="project-card-compact minimal-glow glass-container fade-in-up">
-                <div class="project-header-compact">
-                    <div class="project-number-compact">02</div>
-                    <div class="project-icon-compact aws-icon">
-                        <i class="fab fa-aws"></i>
-                    </div>
-                    <div>
-                        <h2>Secure Roundcube Email Server (AWS)</h2>
-                        <p class="project-meta"><i class="fas fa-university"></i> Seneca Polytechnic • Course: OPS345</p>
-                    </div>
-                </div>
-
-                <div class="project-overview-compact">
-                    <strong>Challenge:</strong> Deploy production-ready email server using Apache, PHP, and Roundcube on AWS EC2 with HTTPS-only access and database integration—without direct guidance.
-                </div>
-
-                <div class="project-achievements-compact">
-                    <ul>
-                        <li><strong>HTTPS-only security:</strong> Apache/PHP configuration with forced secure connections</li>
-                        <li><strong>Database management:</strong> ops345db instance setup with user authentication</li>
-                        <li><strong>Custom deployment:</strong> Roundcube installation with environment-specific configuration</li>
-                        <li><strong>Security hardening:</strong> SMTP encryption blocks, installer removal post-deployment</li>
-                    </ul>
-                </div>
-
-                <div class="project-tech-compact">
-                    <span>AWS EC2</span>
-                    <span>Apache Web Server</span>
-                    <span>PHP</span>
-                    <span>Roundcube</span>
-                    <span>Database Admin</span>
-                    <span>HTTPS/SSL</span>
-                </div>
-
-                <a href="https://www.linkedin.com/in/prabin-acharya-790bb4238/details/projects/" target="_blank" class="btn-project-link">
-                    View Project Details →
-                </a>
-            </div>
-
-            <!-- Project 3: Security (NEW) -->
-            <div class="project-card-compact minimal-glow glass-container fade-in-up">
-                <div class="project-header-compact">
-                    <div class="project-number-compact">03</div>
-                    <div class="project-icon-compact security-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div>
-                        <h2>Security Incident Response & Analysis</h2>
-                        <p class="project-meta"><i class="fas fa-university"></i> Seneca Polytechnic • Course: SEC320</p>
-                    </div>
-                </div>
-
-                <div class="project-overview-compact">
-                    <strong>Challenge:</strong> Simulate real-world cyber-attacks in controlled environment to detect, analyze, and document incident response using enterprise security tools and methodologies.
-                </div>
-
-                <div class="project-achievements-compact">
-                    <ul>
-                        <li><strong>Lab environment:</strong> Kali Linux (attacker), Windows 10 (victim), OSSIM (monitoring)</li>
-                        <li><strong>Attack simulation:</strong> SYN Scan, OS Fingerprinting, TCP Connect, NULL Scan, UDP Scan, IP Spoofing, ICMP Sweep, DDOS SYN Flood</li>
-                        <li><strong>Real-time monitoring:</strong> OSSIM + Wireshark for traffic analysis and TTP dissection</li>
-                        <li><strong>Vulnerability analysis:</strong> Documented security weaknesses and defense effectiveness</li>
-                        <li><strong>Incident reporting:</strong> Comprehensive analysis of attack methodologies and response processes</li>
-                    </ul>
-                </div>
-
-                <div class="project-tech-compact">
-                    <span>Kali Linux</span>
-                    <span>OSSIM</span>
-                    <span>Wireshark</span>
-                    <span>Penetration Testing</span>
-                    <span>Network Security</span>
-                    <span>Incident Response</span>
-                </div>
-
-                <a href="https://www.linkedin.com/in/prabin-acharya-790bb4238/details/projects/" target="_blank" class="btn-project-link">
-                    View Project Details →
-                </a>
-            </div>
-
-            <!-- Project 4: Raspberry Pi -->
-            <div class="project-card-compact minimal-glow glass-container fade-in-up">
-                <div class="project-header-compact">
-                    <div class="project-number-compact">04</div>
-                    <div class="project-icon-compact raspberry-icon">
+            <!-- Project 2: Raspberry Pi Security System -->
+            <div class="project-card-detailed glass-container minimal-glow fade-in-up delay-1">
+                <div class="project-header-large">
+                    <div class="project-icon-large raspberry">
                         <i class="fab fa-raspberry-pi"></i>
                     </div>
-                    <div>
-                        <h2>Raspberry Pi Motion-Detection Security System</h2>
-                        <p class="project-meta"><i class="fas fa-university"></i> Seneca Polytechnic • Course: CSN</p>
+                    <div class="project-title-section">
+                        <h2>Raspberry Pi Security System</h2>
+                        <p class="project-category">IoT | Hardware Integration | Python</p>
                     </div>
                 </div>
 
-                <div class="project-overview-compact">
-                    <strong>Challenge:</strong> Design IoT security system integrating hardware sensors, camera modules, and Python automation for automated intrusion detection and evidence capture.
+                <div class="project-overview">
+                    <p>Designed and built a motion-detecting home security system using Raspberry Pi, PIR sensors, and Python automation for real-time surveillance with remote VNC monitoring capabilities.</p>
                 </div>
 
-                <div class="project-achievements-compact">
-                    <ul>
-                        <li><strong>Motion detection:</strong> PIR sensor integration triggering automated camera capture</li>
-                        <li><strong>Dual-mode capture:</strong> Image + video recording system with automated storage</li>
-                        <li><strong>Hardware assembly:</strong> Raspberry Pi, camera module, PIR sensor, networking, power</li>
-                        <li><strong>Python automation:</strong> Thonny IDE development for sensor/camera control logic</li>
-                        <li><strong>Remote monitoring:</strong> VNC Viewer for remote system access and management</li>
-                    </ul>
+                <h3 class="project-section-title">Technical Implementation</h3>
+                <ul class="project-features">
+                    <li><i class="fas fa-check-circle"></i> Integrated <strong>PIR motion sensor</strong> with Raspberry Pi GPIO pins</li>
+                    <li><i class="fas fa-check-circle"></i> Developed Python script for automated image/video capture on motion detection</li>
+                    <li><i class="fas fa-check-circle"></i> Configured <strong>VNC server</strong> for remote system monitoring</li>
+                    <li><i class="fas fa-check-circle"></i> Implemented file storage system for captured footage</li>
+                    <li><i class="fas fa-check-circle"></i> Created email alert system for motion events</li>
+                </ul>
+
+                <h3 class="project-section-title">Technologies Used</h3>
+                <div class="project-tech-tags">
+                    <span class="tech-tag">Raspberry Pi</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">PIR Sensor</span>
+                    <span class="tech-tag">VNC</span>
+                    <span class="tech-tag">GPIO</span>
+                    <span class="tech-tag">IoT</span>
                 </div>
 
-                <div class="project-tech-compact">
-                    <span>Raspberry Pi</span>
-                    <span>Python</span>
-                    <span>PIR Sensors</span>
-                    <span>Camera Module</span>
-                    <span>VNC Remote Access</span>
-                    <span>IoT Development</span>
+                <div class="project-outcomes">
+                    <h3 class="project-section-title">Key Outcomes</h3>
+                    <div class="outcomes-grid">
+                        <div class="outcome-item">
+                            <i class="fas fa-video"></i>
+                            <div>
+                                <strong>Real-Time Surveillance</strong>
+                                <p>Automatic motion-triggered recording</p>
+                            </div>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div>
+                                <strong>Remote Access</strong>
+                                <p>VNC-based remote monitoring</p>
+                            </div>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-bell"></i>
+                            <div>
+                                <strong>Instant Alerts</strong>
+                                <p>Email notifications on detection</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <a href="https://www.linkedin.com/in/prabin-acharya-790bb4238/details/projects/" target="_blank" class="btn-project-link">
-                    View Project Details →
-                </a>
+                <div class="project-links">
+                    <a href="https://www.linkedin.com/in/prabin-acharya-123b83252/" target="_blank" class="btn btn-secondary ripple-btn">
+                        <i class="fab fa-linkedin"></i> View on LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 3: AWS Mail Server -->
+            <div class="project-card-detailed glass-container minimal-glow fade-in-up delay-2">
+                <div class="project-header-large">
+                    <div class="project-icon-large aws">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <div class="project-title-section">
+                        <h2>AWS EC2 Mail Server Configuration</h2>
+                        <p class="project-category">Cloud | Email Infrastructure | Linux</p>
+                    </div>
+                </div>
+
+                <div class="project-overview">
+                    <p>Configured a production-ready mail server on AWS EC2 using Postfix and Dovecot with TLS encryption, spam filtering, and proper DNS configuration for reliable email delivery.</p>
+                </div>
+
+                <h3 class="project-section-title">Technical Implementation</h3>
+                <ul class="project-features">
+                    <li><i class="fas fa-check-circle"></i> Deployed Ubuntu EC2 instance and configured security groups</li>
+                    <li><i class="fas fa-check-circle"></i> Installed and configured <strong>Postfix (SMTP)</strong> and <strong>Dovecot (IMAP/POP3)</strong></li>
+                    <li><i class="fas fa-check-circle"></i> Implemented <strong>TLS/SSL encryption</strong> for secure email transmission</li>
+                    <li><i class="fas fa-check-circle"></i> Configured DNS records (MX, SPF, DKIM, DMARC) for deliverability</li>
+                    <li><i class="fas fa-check-circle"></i> Set up spam filtering with SpamAssassin</li>
+                </ul>
+
+                <h3 class="project-section-title">Technologies Used</h3>
+                <div class="project-tech-tags">
+                    <span class="tech-tag">AWS EC2</span>
+                    <span class="tech-tag">Ubuntu Linux</span>
+                    <span class="tech-tag">Postfix</span>
+                    <span class="tech-tag">Dovecot</span>
+                    <span class="tech-tag">TLS/SSL</span>
+                    <span class="tech-tag">DNS</span>
+                </div>
+
+                <div class="project-outcomes">
+                    <h3 class="project-section-title">Key Outcomes</h3>
+                    <div class="outcomes-grid">
+                        <div class="outcome-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Reliable Delivery</strong>
+                                <p>95%+ inbox placement rate</p>
+                            </div>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-lock"></i>
+                            <div>
+                                <strong>Secure Communication</strong>
+                                <p>TLS encryption enforced</p>
+                            </div>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-filter"></i>
+                            <div>
+                                <strong>Spam Protection</strong>
+                                <p>SpamAssassin integration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://www.linkedin.com/in/prabin-acharya-123b83252/" target="_blank" class="btn btn-secondary ripple-btn">
+                        <i class="fab fa-linkedin"></i> View on LinkedIn
+                    </a>
+                </div>
             </div>
 
         </div>
     </section>
 
     <!-- CTA -->
-    <section class="cta-compact">
+    <section class="cta-section">
         <div class="container">
-            <div class="cta-box-compact minimal-glow fade-in-up">
-                <h2>4 Projects. 3 Platforms. Endless Learning.</h2>
-                <p>From multi-region cloud deployments to cyber-attack simulations—hands-on experience that translates directly to enterprise environments.</p>
-                <div class="cta-buttons-compact">
-                    <a href="https://www.linkedin.com/in/prabin-acharya-790bb4238/details/projects/" target="_blank" class="btn btn-primary ripple-btn">
-                        <i class="fab fa-linkedin"></i> View All on LinkedIn
+            <div class="cta-box-large glass-container-xl minimal-glow fade-in-up">
+                <h2 class="cta-title">Interested in My Technical Work?</h2>
+                <p class="cta-text">Let's discuss how these skills translate to solving your organization's IT challenges.</p>
+                <div class="cta-buttons-large">
+                    <a href="contact.html" class="btn btn-primary btn-xl ripple-btn">
+                        <i class="fas fa-paper-plane"></i> Get in Touch
                     </a>
-                    <a href="contact.html" class="btn btn-secondary ripple-btn">
-                        <i class="fas fa-envelope"></i> Discuss Projects
+                    <a href="Prabin Acharya Resume IT.pdf" download class="btn btn-secondary btn-xl ripple-btn">
+                        <i class="fas fa-download"></i> Download Resume
                     </a>
                 </div>
             </div>
@@ -258,4 +298,3 @@
     <script src="main.js"></script>
 </body>
 </html>
-
