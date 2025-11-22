@@ -82,14 +82,15 @@
       SPACE BACKGROUND
       ============================================ */
    #three-container {
-       position: fixed;
-       top: 0;
-       left: 0;
-       width: 100%;
-       height: 100%;
-       z-index: -1;
-       background: linear-gradient(180deg, #000000 0%, #0a0e1a 100%);
-   }
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: -1 !important;
+    background: #2a2a2a !important;  /* Dark gray instead of black */
+    overflow: hidden !important;
+}
    
    /* ============================================
       FIXED NAVIGATION BAR
@@ -6140,5 +6141,6 @@ html {
         width: 100%;
     }
 }
+
 
 
