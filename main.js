@@ -1,6 +1,5 @@
 // ============================================
-// INTERACTIVE NETWORK BACKGROUND (Enhanced with MORE lines)
-// Lines and particles follow mouse movement
+// SUPER DENSE INTERACTIVE NETWORK BACKGROUND
 // ============================================
 
 class NetworkBackground {
@@ -10,8 +9,8 @@ class NetworkBackground {
         this.particles = [];
         this.mouseX = 0;
         this.mouseY = 0;
-        this.maxDistance = 200;  // Increased from 150 to 200
-        this.particleCount = 150;  // Increased from 80 to 150
+        this.maxDistance = 250;  // Even longer connections!
+        this.particleCount = 200;  // 200 particles for SUPER dense effect
         
         this.init();
     }
@@ -60,9 +59,9 @@ class NetworkBackground {
             this.particles.push({
                 x: Math.random() * this.canvas.width,
                 y: Math.random() * this.canvas.height,
-                vx: (Math.random() - 0.5) * 0.5,
-                vy: (Math.random() - 0.5) * 0.5,
-                radius: Math.random() * 2 + 1
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                radius: Math.random() * 2.5 + 1
             });
         }
     }
@@ -81,8 +80,8 @@ class NetworkBackground {
             const dy = this.mouseY - particle.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
             
-            if (distance < 120) {
-                const force = (120 - distance) / 120;
+            if (distance < 150) {
+                const force = (150 - distance) / 150;
                 particle.x -= dx * force * 0.03;
                 particle.y -= dy * force * 0.03;
             }
@@ -95,10 +94,10 @@ class NetworkBackground {
             particle.x = Math.max(0, Math.min(this.canvas.width, particle.x));
             particle.y = Math.max(0, Math.min(this.canvas.height, particle.y));
             
-            // Draw particle
+            // Draw particle with glow
             this.ctx.beginPath();
             this.ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-            this.ctx.fillStyle = 'rgba(0, 212, 255, 0.8)';
+            this.ctx.fillStyle = 'rgba(0, 212, 255, 0.9)';
             this.ctx.fill();
             
             // Draw lines to nearby particles
@@ -112,9 +111,9 @@ class NetworkBackground {
                     this.ctx.beginPath();
                     this.ctx.moveTo(particle.x, particle.y);
                     this.ctx.lineTo(other.x, other.y);
-                    const opacity = (1 - distance / this.maxDistance) * 0.6;  // Increased opacity
+                    const opacity = (1 - distance / this.maxDistance) * 0.7;  // Higher opacity
                     this.ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
-                    this.ctx.lineWidth = 1;
+                    this.ctx.lineWidth = 1.2;
                     this.ctx.stroke();
                 }
             }
@@ -128,7 +127,7 @@ class NetworkBackground {
                 this.ctx.beginPath();
                 this.ctx.moveTo(particle.x, particle.y);
                 this.ctx.lineTo(this.mouseX, this.mouseY);
-                const opacity = (1 - mouseDistance / this.maxDistance) * 0.8;
+                const opacity = (1 - mouseDistance / this.maxDistance) * 0.9;
                 this.ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
                 this.ctx.lineWidth = 2;
                 this.ctx.stroke();
@@ -304,4 +303,4 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-console.log('%c🌐 INTERACTIVE NETWORK LOADED! ', 'background: #0d1117; color: #00d4ff; padding: 12px 24px; border-radius: 8px; font-size: 18px; font-weight: bold;');
+console.log('%c🌐 SUPER DENSE NETWORK LOADED! ', 'background: #2a2a2a; color: #00d4ff; padding: 12px 24px; border-radius: 8px; font-size: 18px; font-weight: bold;');
