@@ -1,5 +1,5 @@
 // ============================================
-// INTERACTIVE NETWORK BACKGROUND (Like Swagat's)
+// INTERACTIVE NETWORK BACKGROUND (Enhanced with MORE lines)
 // Lines and particles follow mouse movement
 // ============================================
 
@@ -10,8 +10,8 @@ class NetworkBackground {
         this.particles = [];
         this.mouseX = 0;
         this.mouseY = 0;
-        this.maxDistance = 150;
-        this.particleCount = 80;
+        this.maxDistance = 200;  // Increased from 150 to 200
+        this.particleCount = 150;  // Increased from 80 to 150
         
         this.init();
     }
@@ -81,8 +81,8 @@ class NetworkBackground {
             const dy = this.mouseY - particle.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
             
-            if (distance < 100) {
-                const force = (100 - distance) / 100;
+            if (distance < 120) {
+                const force = (120 - distance) / 120;
                 particle.x -= dx * force * 0.03;
                 particle.y -= dy * force * 0.03;
             }
@@ -112,7 +112,7 @@ class NetworkBackground {
                     this.ctx.beginPath();
                     this.ctx.moveTo(particle.x, particle.y);
                     this.ctx.lineTo(other.x, other.y);
-                    const opacity = (1 - distance / this.maxDistance) * 0.5;
+                    const opacity = (1 - distance / this.maxDistance) * 0.6;  // Increased opacity
                     this.ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
                     this.ctx.lineWidth = 1;
                     this.ctx.stroke();
