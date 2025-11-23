@@ -48,10 +48,18 @@ class NetworkBackground {
         this.animate();
     }
     
-    resize() {
-        this.canvas.width = window.innerWidth;
-        this.canvas.height = window.innerHeight;
+   resize() {
+    // Get actual viewport dimensions accounting for zoom
+    const rect = document.body.getBoundingClientRect();
+    this.canvas.width = Math.max(window.innerWidth, rect.width);
+    this.canvas.height = Math.max(window.innerHeight, rect.height);
+    
+    // Recreate particles after resize to fill new space
+    if (this.particles.length > 0) {
+        this.createParticles();
     }
+}
+
     
     createParticles() {
         this.particles = [];
@@ -302,5 +310,27 @@ window.addEventListener('scroll', () => {
     }
     lastScroll = currentScroll;
 });
+// ============================================
+// HANDLE ZOOM CHANGES
+// ============================================
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        // Force canvas redraw on zoom
+        const event = new Event('resize');
+        window.dispatchEvent(event);
+    }, 100);
+});
+
+// Detect zoom via visual viewport API (modern browsers)
+if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', () => {
+        const event = new Event('resize');
+        window.dispatchEvent(event);
+    });
+}
+
 
 console.log('%c🌐 SUPER DENSE NETWORK LOADED! ', 'background: #2a2a2a; color: #00d4ff; padding: 12px 24px; border-radius: 8px; font-size: 18px; font-weight: bold;');
+
