@@ -6135,4 +6135,132 @@ html {
         width: 100%;
     }
 }
+/* ================================================
+   FORCE ALL TEXT TO WHITE FOR MAXIMUM READABILITY
+   Added: November 22, 2025
+   ================================================ */
+
+/* All headings pure white */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* All body text white */
+body, p, span, li, div, a, label {
+    color: #ffffff !important;
+}
+
+/* Hero section text */
+.hero-content h1,
+.hero-content h2,
+.hero-content p,
+.hero-title-main,
+.hero-role,
+.hero-desc,
+.hero-subtitle,
+.hero-tagline,
+.hero-description,
+.subtitle,
+.page-subtitle,
+.page-subtitle-compact {
+    color: #ffffff !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Navigation white */
+.nav-link,
+.logo {
+    color: #ffffff !important;
+}
+
+.nav-link:hover {
+    color: #00d4ff !important;
+}
+
+/* Stats and cards white */
+.stats-card h3,
+.stats-card p,
+.stat-number,
+.stat-label,
+.stat-compact h3,
+.stat-compact p,
+.info-card h3,
+.info-card p {
+    color: #ffffff !important;
+}
+
+/* Glass containers white text */
+.glass-card h3,
+.glass-card p,
+.glass-card span,
+.glass-container h3,
+.glass-container p {
+    color: #ffffff !important;
+}
+
+/* Form elements white */
+.form-label,
+label,
+.form-group label {
+    color: #ffffff !important;
+}
+
+/* Footer white */
+footer,
+footer p,
+footer a,
+.footer p {
+    color: #ffffff !important;
+}
+
+/* Timeline and experience cards */
+.company-name,
+.job-title,
+.school-name,
+.degree-title,
+.project-title,
+.cert-card h3 {
+    color: #ffffff !important;
+}
+
+/* Achievements and lists */
+.achievement-item span,
+.coursework-column li,
+.skill-category-list li {
+    color: #ffffff !important;
+}
+
+/* Page titles */
+.page-title-large,
+.page-title-compact,
+.page-title-edu,
+.page-title-projects,
+.page-title-resume,
+.page-title-contact {
+    color: #ffffff !important;
+}
+
+/* Section titles */
+.section-title,
+.section-title-compact,
+.section-title-about,
+.section-title-edu {
+    color: #ffffff !important;
+}
+
+/* Extra shadow for all text */
+* {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Remove shadow from buttons and icons */
+button, .btn, i, .fas, .fab {
+    text-shadow: none !important;
+}
+
+/* ================================================
+   END WHITE TEXT OVERRIDE
+   ================================================ */
+
 
