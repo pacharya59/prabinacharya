@@ -10,7 +10,7 @@ class NetworkBackground {
         this.mouseX = 0;
         this.mouseY = 0;
         this.maxDistance = 250;  // Even longer connections!
-        this.particleCount = 200;  // 200 particles for SUPER dense effect
+        this.particleCount = 150;  // 200 particles for SUPER dense effect
         
         this.init();
     }
@@ -304,3 +304,4 @@ window.addEventListener('scroll', () => {
 });
 
 console.log('%c🌐 SUPER DENSE NETWORK LOADED! ', 'background: #2a2a2a; color: #00d4ff; padding: 12px 24px; border-radius: 8px; font-size: 18px; font-weight: bold;');
+
