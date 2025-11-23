@@ -49,9 +49,28 @@ class NetworkBackground {
     }
     
     resize() {
-        this.canvas.width = window.innerWidth;
-        this.canvas.height = window.innerHeight;
+    const oldWidth = this.canvas.width;
+    const oldHeight = this.canvas.height;
+    
+    this.canvas.width = window.innerWidth;
+    this.canvas.height = window.innerHeight;
+    
+    // Redistribute particles proportionally when canvas size changes
+    if (oldWidth > 0 && oldHeight > 0 && this.particles.length > 0) {
+        const widthRatio = this.canvas.width / oldWidth;
+        const heightRatio = this.canvas.height / oldHeight;
+        
+        this.particles.forEach(particle => {
+            particle.x *= widthRatio;
+            particle.y *= heightRatio;
+            
+            // Keep particles within bounds
+            particle.x = Math.max(0, Math.min(this.canvas.width, particle.x));
+            particle.y = Math.max(0, Math.min(this.canvas.height, particle.y));
+        });
     }
+}
+
     
     createParticles() {
         this.particles = [];
@@ -304,4 +323,5 @@ window.addEventListener('scroll', () => {
 });
 
 console.log('%c🌐 SUPER DENSE NETWORK LOADED! ', 'background: #2a2a2a; color: #00d4ff; padding: 12px 24px; border-radius: 8px; font-size: 18px; font-weight: bold;');
+
 
