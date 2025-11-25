@@ -88,7 +88,7 @@
        width: 100%;
        height: 100%;
        z-index: -1;
-       background: linear-gradient(180deg, #000000 0%, #0a0e1a 100%);
+       background: #050810 !important;  /* Much darker background */
    }
    
    /* ============================================
@@ -6262,5 +6262,6 @@ button, .btn, i, .fas, .fab {
 /* ================================================
    END WHITE TEXT OVERRIDE
    ================================================ */
+
 
 
