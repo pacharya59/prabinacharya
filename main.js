@@ -116,7 +116,7 @@ class NetworkBackground {
             // Draw particle with glow
             this.ctx.beginPath();
             this.ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-            this.ctx.fillStyle = 'rgba(0, 212, 255, 0.9)';
+            this.ctx.fillStyle = 'rgba(0, 212, 255, 0.3)';  // Reduced from 0.9 to 0.3
             this.ctx.fill();
             
             // Draw lines to nearby particles
@@ -130,8 +130,8 @@ class NetworkBackground {
                     this.ctx.beginPath();
                     this.ctx.moveTo(particle.x, particle.y);
                     this.ctx.lineTo(other.x, other.y);
-                    const opacity = (1 - distance / this.maxDistance) * 0.7;  // Higher opacity
-                    this.ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
+                    const opacity = (1 - distance / this.maxDistance) * 0.2;  // Reduced from 0.7 to 0.2
+this.ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
                     this.ctx.lineWidth = 1.2;
                     this.ctx.stroke();
                 }
@@ -146,8 +146,8 @@ class NetworkBackground {
                 this.ctx.beginPath();
                 this.ctx.moveTo(particle.x, particle.y);
                 this.ctx.lineTo(this.mouseX, this.mouseY);
-                const opacity = (1 - mouseDistance / this.maxDistance) * 0.9;
-                this.ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
+                const opacity = (1 - mouseDistance / this.maxDistance) * 0.3;  // Reduced from 0.9 to 0.3
+this.ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
                 this.ctx.lineWidth = 2;
                 this.ctx.stroke();
             }
@@ -323,5 +323,6 @@ window.addEventListener('scroll', () => {
 });
 
 console.log('%c🌐 SUPER DENSE NETWORK LOADED! ', 'background: #2a2a2a; color: #00d4ff; padding: 12px 24px; border-radius: 8px; font-size: 18px; font-weight: bold;');
+
 
 
