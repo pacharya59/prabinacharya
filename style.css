@@ -6347,6 +6347,58 @@ button, .btn, a {
 /* ================================================
    END WHITE TEXT OVERRIDE
    ================================================ */
+/* ================================================
+   FORCE DESKTOP VIEW ON MOBILE PHONES
+   Make mobile display exactly like laptop (zoomed out)
+   ================================================ */
+
+@media (max-width: 1024px) {
+    html {
+        zoom: 0.75;
+        transform-origin: top left;
+    }
+    
+    body {
+        width: 133.33%;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        zoom: 0.60;
+        transform-origin: top left;
+    }
+    
+    body {
+        width: 166.67%;
+        height: 166.67%;
+    }
+    
+    #three-container {
+        zoom: 1;
+    }
+    
+    #three-container canvas {
+        zoom: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        zoom: 0.50;
+        transform-origin: top left;
+    }
+    
+    body {
+        width: 200%;
+        height: 200%;
+    }
+}
+
+/* ================================================
+   END MOBILE DESKTOP VIEW FIX
+   ================================================ */
+
 
 
 
