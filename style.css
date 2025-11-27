@@ -6258,10 +6258,84 @@ footer a,
 button, .btn, i, .fas, .fab {
     text-shadow: none !important;
 }
+/* ================================================
+   iPHONE NOTIFICATION CENTER EFFECT
+   Frosted glass blur on existing elements
+   ================================================ */
+
+/* Enhance all glass containers with iOS blur */
+.glass-container,
+.glass-card,
+.hero-content,
+.info-card,
+.stats-card,
+.stat-compact,
+.card,
+.method-item-compact,
+.inside-item-compact {
+    background: rgba(15, 18, 25, 0.65) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Subtle lift effect on hover */
+.glass-container:hover,
+.glass-card:hover,
+.stats-card:hover,
+.stat-compact:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.5),
+        inset 0 1px 2px rgba(255, 255, 255, 0.08) !important;
+    transition: all 0.3s ease;
+}
+
+/* Softer button colors like iOS */
+.btn-primary,
+.btn:not(.btn-secondary),
+.btn-resume {
+    background: rgba(0, 200, 255, 0.9) !important;
+    box-shadow: 
+        0 8px 24px rgba(0, 200, 255, 0.3),
+        0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+.btn-primary:hover {
+    background: rgba(0, 210, 255, 1) !important;
+    box-shadow: 
+        0 12px 32px rgba(0, 210, 255, 0.4),
+        0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* iOS style borders */
+.glass-container,
+.glass-card,
+.info-card,
+.stats-card {
+    border-radius: 18px !important;
+}
+
+/* Smooth transitions */
+* {
+    transition: all 0.25s ease;
+}
+
+button, .btn, a {
+    transition: all 0.2s ease;
+}
+
+/* ================================================
+   END iPhone EFFECT
+   ================================================ */
 
 /* ================================================
    END WHITE TEXT OVERRIDE
    ================================================ */
+
 
 
 
