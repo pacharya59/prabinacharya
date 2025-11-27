@@ -9,8 +9,8 @@ class NetworkBackground {
         this.particles = [];
         this.mouseX = 0;
         this.mouseY = 0;
-        this.maxDistance = 250;  // Even longer connections!
-        this.particleCount = 150;  // 200 particles for SUPER dense effect
+        this.maxDistance = 250;
+        this.particleCount = 150;
         
         this.init();
     }
@@ -49,28 +49,31 @@ class NetworkBackground {
     }
     
     resize() {
-    const oldWidth = this.canvas.width;
-    const oldHeight = this.canvas.height;
-    
-    this.canvas.width = window.innerWidth;
-    this.canvas.height = window.innerHeight;
-    
-    // Redistribute particles proportionally when canvas size changes
-    if (oldWidth > 0 && oldHeight > 0 && this.particles.length > 0) {
-        const widthRatio = this.canvas.width / oldWidth;
-        const heightRatio = this.canvas.height / oldHeight;
+        // Use innerWidth/Height for proper mobile + desktop sizing
+        const width = window.innerWidth;
+        const height = window.innerHeight;
         
-        this.particles.forEach(particle => {
-            particle.x *= widthRatio;
-            particle.y *= heightRatio;
+        const oldWidth = this.canvas.width;
+        const oldHeight = this.canvas.height;
+        
+        this.canvas.width = width;
+        this.canvas.height = height;
+        
+        // Redistribute particles proportionally when canvas size changes
+        if (oldWidth > 0 && oldHeight > 0 && this.particles.length > 0) {
+            const widthRatio = width / oldWidth;
+            const heightRatio = height / oldHeight;
             
-            // Keep particles within bounds
-            particle.x = Math.max(0, Math.min(this.canvas.width, particle.x));
-            particle.y = Math.max(0, Math.min(this.canvas.height, particle.y));
-        });
+            this.particles.forEach(particle => {
+                particle.x *= widthRatio;
+                particle.y *= heightRatio;
+                
+                // Keep particles within bounds
+                particle.x = Math.max(0, Math.min(width, particle.x));
+                particle.y = Math.max(0, Math.min(height, particle.y));
+            });
+        }
     }
-}
-
     
     createParticles() {
         this.particles = [];
@@ -116,7 +119,7 @@ class NetworkBackground {
             // Draw particle with glow
             this.ctx.beginPath();
             this.ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-            this.ctx.fillStyle = 'rgba(0, 212, 255, 0.3)';  // Reduced from 0.9 to 0.3
+            this.ctx.fillStyle = 'rgba(0, 212, 255, 0.3)';
             this.ctx.fill();
             
             // Draw lines to nearby particles
@@ -130,8 +133,8 @@ class NetworkBackground {
                     this.ctx.beginPath();
                     this.ctx.moveTo(particle.x, particle.y);
                     this.ctx.lineTo(other.x, other.y);
-                    const opacity = (1 - distance / this.maxDistance) * 0.2;  // Reduced from 0.7 to 0.2
-this.ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
+                    const opacity = (1 - distance / this.maxDistance) * 0.2;
+                    this.ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
                     this.ctx.lineWidth = 1.2;
                     this.ctx.stroke();
                 }
@@ -146,8 +149,8 @@ this.ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
                 this.ctx.beginPath();
                 this.ctx.moveTo(particle.x, particle.y);
                 this.ctx.lineTo(this.mouseX, this.mouseY);
-                const opacity = (1 - mouseDistance / this.maxDistance) * 0.3;  // Reduced from 0.9 to 0.3
-this.ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
+                const opacity = (1 - mouseDistance / this.maxDistance) * 0.3;
+                this.ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
                 this.ctx.lineWidth = 2;
                 this.ctx.stroke();
             }
@@ -322,7 +325,4 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-console.log('%c🌐 SUPER DENSE NETWORK LOADED! ', 'background: #2a2a2a; color: #00d4ff; padding: 12px 24px; border-radius: 8px; font-size: 18px; font-weight: bold;');
-
-
-
+console.log('%c🌐 SUPER DENSE NETWORK LOADED! ', 'background: #050810; color: #00d4ff; padding: 12px 24px; border-radius: 8px; font-size: 18px; font-weight: bold;');
